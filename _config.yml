@@ -1,0 +1,36 @@
+name: Chamoda Pandithage
+bio: 'IOS/Android Developer'
+picture: 'assets/images/profile.jpg'
+
+url: http://127.0.0.1:3000
+# your url: http://USERNAME.github.io/
+permalink: /:title/
+
+analytics: 'UA-MYANALYTICS'
+disqus: mydisqus
+
+twitter: chamodac
+facebook: chamodac
+instagram: chamodac
+linkedin: mylinkedin
+youtube: chamodac
+github: chamoda
+email: chamodac@gmail.com
+
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor]
+
+# if you don't need pagination, comment the *paginate* configs below
+# paginate: 5
+# paginate_path: "blog/:num/"
+
+gems:
+  - jemoji
+  - jekyll-mentions
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-paginate
+
+jekyll-mentions:
+    base_url: https://github.com
