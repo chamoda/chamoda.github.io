@@ -2,8 +2,9 @@ name: Chamoda Pandithage
 bio: 'IOS/Android Developer'
 picture: 'assets/images/profile.jpg'
 
-url: http://127.0.0.1:3000
-# your url: http://USERNAME.github.io/
+#url: http://127.0.0.1:3000
+url: http://chamoda.github.io
+
 permalink: /:title/
 
 analytics: 'UA-MYANALYTICS'
