@@ -2,7 +2,7 @@ name: Chamoda Pandithage
 bio: 'IOS/Android Developer'
 picture: 'assets/images/profile.jpg'
 
-#url: http://127.0.0.1:3000
+# url: http://127.0.0.1:3000
 url: http://chamoda.github.io
 
 permalink: /:title
@@ -12,7 +12,6 @@ analytics: 'UA-MYANALYTICS'
 disqus: mydisqus
 twitter: chamodac
 facebook: chamodac
-instagram: chamodac
 linkedin: in/chamoda-pandithage-793a90a2
 github: chamoda
 email: chamodac@gmail.com
