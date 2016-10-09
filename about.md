@@ -14,23 +14,15 @@ permalink: /about/index.html
 <ul class="skill-list">
 	<li>IOS Development</li>
 	<li>Android Development</li>
-	<li>Cloud Computing</li>
-	<li>Problem solving</li>
-	<li>Shell Scripting</li>
-	<li>Penetration Testing</li>
+	<li>Amazon Web Services (AWS)</li>
 </ul>
-
 
 <h2>Also knows about</h2>
 
 <ul class="skill-list">
-	<li>Machine Learning</li>
 	<li>Cybersecurity</li>
-	<li>System Automation</li>
-	<li>Git Version Controlling</li>
-	<li>LAMP Stack (Linux, Apache, MySql, PHP)</li>
-	<li>MEAN Stack (MongoDB, ExpressJS, AngularJS, NodeJS)</li>
 	<li>Laravel PHP Framwork</li>	
-	<li>Amazon Web Services (AWS)</li>
 	<li>Continuous Integration</li>
+	<li>Shell Scripting</li>
+	<li>Penetration Testing</li>
 </ul>
