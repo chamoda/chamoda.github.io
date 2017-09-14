@@ -1,18 +1,18 @@
 Personal website setup
 
-# Install
+## Install
 
 ```
 sudo gem install jekyll bundler
 bundle install
 ```
 
-# Run server
+## Run server
 
 ```
 bundle exec jekyll serve
 ```
 
-# Template
+## Template
 
 https://github.com/sergiokopplin/indigo
