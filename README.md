@@ -12,3 +12,7 @@ bundle install
 ```
 bundle exec jekyll serve
 ```
+
+# Template
+
+https://github.com/sergiokopplin/indigo
