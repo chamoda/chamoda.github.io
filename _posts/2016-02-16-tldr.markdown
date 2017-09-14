@@ -2,10 +2,14 @@
 title: "Simplified man pages with tldr"
 layout: post
 date: 2016-02-08 14:40
-tag: markdown
-#star: true
+tag:
+- linux
+- osx
+category: blog
+#star: false
 ---
 
+Man pages on unix like (Linux, OSX) systems are generally tedious to read. I've been keeping evernote notebook for a simple version of man page with commands I learned from man pages as a reminder. Also I've been using 'grep' to filter out specific commands descriptions from man pages.
 Man pages on unix like (Linux, OSX) systems are generally tedious to read. I've been keeping evernote notebook for a simple version of man page with commands I learned from man pages as a reminder. Also I've been using 'grep' to filter out specific commands descriptions from man pages.
 
 Few weeks ago I found a open source tool called [tldr on github](https://github.com/tldr-pages). TL;DR stands for "Too Long; Didn't Read". It originates as an Internet slang, where it is used to indicate parts of the text skipped as too lengthy. This is a really cool tool learn or/and reference the commands line tools. Let's say you want to know how to extract tar file using tar command. Just type `tldr tar` and you will see a short and sweat output like
