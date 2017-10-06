@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Machine Learning with Linear Regression"
 layout: post
-date: 2017-09-20 14:40
+date: 2017-10-05 14:40
 tag:
 - machine-learning
 - ai
