@@ -1,12 +1,12 @@
 ---
-title: "Realtime face detection using OpenCV and Python"
+title: "Real time face detection using OpenCV and Python"
 layout: post
 date: 2017-10-06 14:40
 tag:
 - machine-learning
-- ai
+- AI
 - python
-- opencv
+- OpenCV
 - osx
 category: blog
 #star: false
@@ -77,6 +77,57 @@ A frame is a array of 3 matrices where each matrix is for the respective color b
 faces = face_cascade.detectMultiScale(gray, 1.3, 5) 
 ```
 
-`detectMultiScale` function detect faces and return an array of positions
+`detectMultiScale` function detect faces and return an array of position ordinates and sizes. Second parameter is `scaleFactor`. To reduce true negatives you must use a value near to zero. It's work like this. Basically the algorithm can only detect it's trained size usually around 20x20 pixel. To detect large object area get scaled by `scaleFactor`. If `scaleFactor` is $$1.05$$ scaled block size would equal to $$20 \times 1.05 = 21$$. If `scaleFactor` is equal to 1.3 in above image scaled block size is $$20 \times 1.3 = 26$$ so you may miss pixel, so do some faces. Trade off is accuracy vs performance. 
+
+3rd parameter is `minNeighbors`. It defines how many neighbor rectangles should identified to retain it. Higher value means less false positives. 
+
+Next we draw red rectangles if faces detected. Notice how we passed red color in BGR format `(0 , 0, 255)`.
+
+```python
+for (x,y,w,h) in faces:
+
+      cv2.rectangle(frame, (x, y), (x+w, y+h), (0 , 0, 255), 2)
+```
+
+Next we are writing to a window frame by frame. If you press key `q` the loop will break and video will stop. I've created a quick video from the output here. Notice how it detects only frontal faces, because model is trained for frontal faces.
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/eAJwY8fQvXs" frameborder="0" allowfullscreen></iframe>
+
+# How it works
+
+Viola Jones algorithm is a machine learning algorithm developed by Paul Viola and Michael Jones in 2001. It was designed to be very fast even to be possible in embedded systems. We can break down it to 4 parts
+
+* Haar like features
+* Integral image
+* AdaBoost (Adaptive Boosting)
+* Cascading
+
+# Haar like features
+
+Haar like features, named after the Hungarian mathematician Alfred Haar is a way of identifying features in a image in a more abstract way. 
+
+# Integral Image
+
+Intergral image is a way to calculate rectangle features quickly
+
+$$
+ii(x, y) = \sum_{x{'} \le x, y{'} \le y} i(x', y')
+$$
+
+Every position is sum of the top and left values. Python code, note this code is written for clarity, there are more efficeint way to write but with less clarity
+
+```python
+def my_intergral_image(img):
+    intergral_img = np.zeros(img.shape)
+    for x in range(img.shape[1]):
+        for y in range(img.shape[0]):
+            for i in range(x + 1):
+                for j in range(y + 1):
+                    intergral_img[y, x] += img[i, j]
+    
+    zero_padded_intergral_image = np.zeros((img.shape[0] + 1, img.shape[1] + 1))
+    
+    zero_padded_intergral_image[1:img.shape[0] + 1, 1:img.shape[1] + 1] = intergral_img
+                    
+    return zero_padded_intergral_image
+```
