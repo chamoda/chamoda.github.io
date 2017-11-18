@@ -7,7 +7,7 @@ tag:
 - AI
 - python
 - OpenCV
-- osx
+- OSX
 category: blog
 #star: false
 ---
@@ -106,6 +106,20 @@ Viola Jones algorithm is a machine learning algorithm developed by Paul Viola an
 
 Haar like features, named after the Hungarian mathematician Alfred Haar is a way of identifying features in a image in a more abstract way. 
 
+![Haar]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/haar.png)
+
+To calculate a feature 
+
+$$
+Value = \text{(Sum of pixels in black area)} - \text{(Sum of pixels in white area)}
+$$
+
+In the case of face detection following feature will give a higher value in the positioned area, that defines a feature.
+
+![Face]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/face.png)
+
+Eye area in the are generally darker than under the eye, so $$\text{(Black area - White area)}$$ will give higher value. And that's defines a feature.
+
 # Integral Image
 
 Intergral image is a way to calculate rectangle features quickly
@@ -114,10 +128,11 @@ $$
 ii(x, y) = \sum_{x{'} \le x, y{'} \le y} i(x', y')
 $$
 
-Every position is sum of the top and left values. Python code, note this code is written for clarity, there are more efficeint way to write but with less clarity
+Every position is sum of the top and left values. Python code, note this code is written for clarity, there are more efficeint way to write but with less clarity. In this case you will be feeding a normalized image to the fuction. Purpose of normaizing first is to get rid of conditions ofl ighting effects.
 
 ```python
 def my_intergral_image(img):
+    
     intergral_img = np.zeros(img.shape)
     for x in range(img.shape[1]):
         for y in range(img.shape[0]):
@@ -131,3 +146,159 @@ def my_intergral_image(img):
                     
     return zero_padded_intergral_image
 ```
+
+Whole purpose of integral image is to calulate sum of pixels inside a given rectangle fast.
+
+![Intergral sum]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/sum.png)
+
+We knows values p, q, r, s in integral image and they represnt the sum of all the left and top values. Our goal is to find pixel sum of D.
+
+$$
+p = A \\
+q = A + B \\
+r = A + C \\
+s = A + B + C + D \\
+$$
+
+So $$D = (p + s) - (q + r)$$ which will reduce computation steps to calulate sum of pixels in defined rectangle significantly.
+
+Here's the equalant python code.
+
+```python
+def sum_region(integral_img, top_left, bottom_right):
+    # to numpy matrix notation
+    top_left = (top_left[1], top_left[0]) 
+    bottom_right = (bottom_right[1], bottom_right[0])
+    if top_left == bottom_right:
+        return integral_img[top_left]
+    top_right = (bottom_right[0], top_left[1])
+    bottom_left = (top_left[0], bottom_right[1])
+    # s + p - (q + r)
+    return integral_img[bottom_right] + integral_img[top_left] - integral_img[top_right] - integral_img[bottom_left]    
+```
+
+# AdaBoost (Adaptive Boosting)
+
+Now we need a way to select best features from all possible features that can correctly classify a face. Boosting is a very powerful idea in machine learning. It was fourmulated by Yoav Freund and Robert Schapire in 1997 and won the prestigious [Gödel Prize](https://en.wikipedia.org/wiki/G%C3%B6del_Prize) in 2003. This elegant machine learning approach can be applied to wide range of problems not only image detection.
+
+I'll start with the idea of weak and strong classifiers.
+
+* Weak Classifier - Classifier that's little bit better than random guessing. 
+* Strong Classifier - A combination of weak classifiers. It represents wisdom of a weighted crowd of experts.
+
+Adaboost itself is a inhertantly incomplete algorithm, so it's called a meta algorithm one which will be build on top of or in combination with that makes the whole algorithm. Let's express the idea of a string classifier mathematically.
+
+$$
+H(x) = sign\Big( h_1(x) + h_2(x) +  ... +h_T(x)\Big)
+$$
+
+H(x) is a strong classifier which classify according to the sign of sum of weak classifiers. Every weak classifier is a Haar feature combined with some other parameters I'll detail out in next few paragraphs. Suppose there are only 3 weak classifiers so $$T = 3$$. If every classifier output +1 or -1 then sum of weak classifier will have + or - sign.
+
+$$
+H(x) = sign\Big( +1 + -1 + -1 \Big)
+$$
+
+Here strong classifier sign is negative so it may not be a face. I started with this analogy but we have to also weight the weak classifiers so some classifiers will have strong influence than others.
+By adding weights strong classifier get little complicated but nothing more than a simple inequality match.
+
+$$
+H(x) = \begin{cases}
+      +1, \text{if}\ \sum_{t = 1}^{T} \alpha_th_t(x) \ge \frac{1}{2} \sum_{t = 1}^{T} \alpha_t \\
+      -1, \text{otherwise}
+     \end{cases}
+$$
+
+Now how we decide which weak classifier to use, which $$\alpha$$ weights to use? That's why we need to train over existing labeled data. Suppose image is $$x_i$$ and label is $$y_i$$ which is 1 for face and 0 for non face. Given example images $$(x_1, y_1), ... , (x_m, y_m)$$ we will initialize weights for each example. Don't confuse this weight with the alpha discussed before. This algorithm has two kind of weights. One is $$\alpha$$ weight for selected weak classifier. Another one is for each example for each step denoted by $$w_{t,i}$$. Now we are going to intialize weights mentioned later for step one $$t = 1$$
+
+$$
+w_{1, i} = \frac{1}{m}
+$$
+
+Here we have normalized the weights so sum of the weights is 1. We do the normalize in every step to make sure weight distribution is always adds up to 1. 
+
+$$
+\sum_{i = 1}^{m} w_{t, i} = 1
+$$
+
+The generalized normalized equation is
+
+$$
+w_{t,i} = \frac{w_{t,i}}{\sum_{j = 0}^{m}w_{t,i}}
+$$
+          
+Next we loop over all the features to select the best weak classifier which minimize the error rate.
+
+$$
+\epsilon_t = min_{f, p, \theta} \sum_{i = 1}^m w_{t, i} | h(x_i, f, p, \theta) - y_i |
+$$
+
+Here calculating the sum of weights of misclassified examples which is the error rate represented by epsilon $$\epsilon$$. Notice $$h(x_i, f, p, \theta) - y_i$$ return 1 or -1 if the misclassified. We are taking the absolute value out of it so weight get multiplied by 1. Let's dive into definition of weak classifier. 
+
+$$
+h(x) = h(x_i, f, p, \theta)
+$$
+
+$$x_i$$ is the $$i$$'th image example. $$f$$ is the Haar feature. $$p$$ is the polarity which is either -1 or +1 which defines direction of the inequality. $$\theta$$ is the threshold.
+
+$$
+h(x, f, p , \theta) = \begin{cases}
+      1, \text{if}\ pf(x) < p\theta \\
+      0, \text{otherwise}
+     \end{cases}
+$$
+
+To select the $$f$$ feature we need loop over f(x) Haar classifier. To select the threshold we need to minimize the following equation.
+
+$$
+error_{\theta} = min\Big( (S_+) + (T_-) - (S_-), (S_-) + (T_+) - (S_+))\Big)
+$$
+
+Here's the definition of symbols 
+
+* $$T_+$$ is total sum of positive sample weights
+* $$T_-$$ is total sum of negetive sample weights
+* $$S_+$$ is sum of positive sample weights below threshold 
+* $$S_-$$ is sum of negetive sample weights below threshold
+
+After finding the minized error $$\epsilon_t$$ for step $$t$$ we can find the weights for the next step $$t + 1$$
+
+$$
+w_{t+1, i} = w_{t, i} \Big(\frac{\epsilon_t}{1 - \epsilon_t}\Big)^{1 -e_i}
+$$
+
+Where $$e_i = 0$$ if sample image $$x_i$$ is correctly classify, 0 otherwise. The goal of the equation is to make the weights of incorrectly classified samples slightly larger so in the next round unforgiving to weak classifiers that's going to classify same samples incorrectly. So in each step it's going choose a unique weak classifier. To do so in the above equation correctly classified weights will decreased so misclassified weights will increase relative to correctly correct weights. 
+
+Finally calculate the $$\alpha_t$$ for the selected classifier.
+
+$$
+\alpha_t = log(\frac{1 - \epsilon_t}{\epsilon_t})
+$$
+
+Notice how $$\alpha$$ going to be higher value if error rate is small so that weak classifier has more contribution to strong classifier. 
+
+So finally algorithm need to loop $$T$$ steps to kind $$T$$ classifiers to get good results. 
+
+# Cascading
+
+We may have noticed how many loops we have in the algorithm so this AdaBoost along with Haar Features are computationally expensive for real time detection. So we are using attentional cascade to reduce some unnecessary computations. More efficient cascade can be constructed that negative sub windows will rejected early. Every stage of cascade is a strong classifiers, so all the features are grouped into several stages where each stage has a several number of features. 
+
+![Cascade]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/cascade.png)
+
+For the cascade we need following parameters
+
+* Number of stages in cascade
+* Number of features in each cascade
+* Threshold of each strong classifier
+
+Finding optimum values for above parameters is a difficult task. Viola Jones introduced a simple method to find the optimum combination.
+
+* Select $$f_i$$ the maximum acceptable false positive rate per stage
+* Select $$d_i$$ the maximum acceptable true positive rate per stage
+* Select $$F_{target}$$ Overall false positive rate
+
+Now we are looping until pre defined $$F_{target}$$ is met by adding new stages. In stages we keep adding features until $$f_i$$ and $$d_i$$ is met. By doing this we are going to create a cascade of strong classifiers.
+
+# Additional Resources
+
+* Original Paper (Revised)- [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf)
+* To learn more about AdaBoost - [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034)
