@@ -1,7 +1,7 @@
 ---
 title: "Real time face detection using OpenCV and Python"
 layout: post
-date: 2017-10-06 14:40
+date: 2017-11-18 14:40
 tag:
 - machine-learning
 - AI
@@ -12,11 +12,11 @@ category: blog
 #star: false
 ---
 
-Detection is an important application of computer vision. In this post I'm going to detail out how to do real time face detection using Viola Jones Algorithm introduced in paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, means which one the face belong. This is merely detection that there is a face. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). Opencv is written in C++ but there are interfaces for other languages so will use python.
+Detection is an important application of computer vision. In this post I'm going to detail out how to do real time face detection using Viola Jones Algorithm introduced in paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, means which one the face belong. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so will use, preferably python.
 
 # Installation
 
-Note that following instructions are for OSX. Steps as follows
+Instructions are for OSX. Steps as follows
 
 * First install [Anaconda](https://www.anaconda.com/download/). 
 * Then create python 3 virtual environment with `conda create -n py3 python=3.6`. 
@@ -27,7 +27,7 @@ Note that following instructions are for OSX. Steps as follows
 
 # Time for action
 
-First we are going to do a quick implementation.
+Let's do a quick implementation.
 
 ```python
 import cv2
@@ -59,25 +59,25 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-In summery we are trying to do is read a video file frame by frame, applying Viola Jones algorithm with trained parameters then apply a rectangle layer if a face found, displaying the modified output frame by frame. 
+We are going to read a video file frame by frame, applying Viola Jones algorithm with trained parameters then apply a rectangle layer if a face found, displaying modified output frame by frame. 
 
-`cap = cv2.VideoCapture("input.mp4")` import the video. You can also use the web cam instead of a video just pass `0` as parameter like `cap = cv2.VideoCapture(0)`. 
+`cap = cv2.VideoCapture("input.mp4")` imports the video. You can also use a web cam instead of video, just pass `0` as parameter like `cap = cv2.VideoCapture(0)`. 
 
-Next we are going to load trained model. `haarcascade_frontalface_default.xml` is a model already trained using lot of faces and non faces and lot of computing power. Training good models sometime takes days not hours. Thankful above model is trained by Intel using lot of data. The model we are using here comes with the installation of OpenCv. Generally you can find those models at your `opencv-installation-directory/share/OpenCV/haarcascades` but this could differ depends on your OS and installation method. 
+Next we are going to load the trained model. `haarcascade_frontalface_default.xml` is a model already trained using lot of faces and non faces and lot of computing power. Training good models sometime takes days not hours. Thankfully above model is trained by Intel using lot of data. The model we are using here comes with the installation of OpenCv. Generally you can find those models at your `opencv-installation-directory/share/OpenCV/haarcascades` but this could differ depends on your OS and installation method. 
 
-Next in a `while` loop we are reading frame by frame. Then get a given frame and convert into gray scale.
+Next in the `while` loop we are reading frame by frame. Then get given frame and convert into gray scale.
 
 ```python
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 ```
 
-A frame is a array of 3 matrices where each matrix is for the respective color blue, green, red. Did you notice the revered order? In OpenCV default representation is BGR not RGB. In the above step we are converting it to gray scale image. `gray` is just a single matrix now. 
+A frame is a array of 3 matrices where each matrix is for the respective color blue, green, red. Did you noticed the revered order? In OpenCV default representation is BGR not RGB. In the above step we are converting it to gray scale image. `gray` is a single matrix now. 
 
 ```python
 faces = face_cascade.detectMultiScale(gray, 1.3, 5) 
 ```
 
-`detectMultiScale` function detect faces and return an array of position ordinates and sizes. Second parameter is `scaleFactor`. To reduce true negatives you must use a value near to zero. It's work like this. Basically the algorithm can only detect it's trained size usually around 20x20 pixel. To detect large object area get scaled by `scaleFactor`. If `scaleFactor` is $$1.05$$ scaled block size would equal to $$20 \times 1.05 = 21$$. If `scaleFactor` is equal to 1.3 in above image scaled block size is $$20 \times 1.3 = 26$$ so you may miss pixel, so do some faces. Trade off is accuracy vs performance. 
+`detectMultiScale` function detect faces and return an array of position coordinates and sizes. Second parameter is `scaleFactor`. To reduce true negatives you must use a value near to zero. Basically the algorithm can only detect it's trained size usually around 20x20 pixel. To detect large object area get scaled by `scaleFactor`. If `scaleFactor` is $$1.05$$ scaled block size would equal to $$20 \times 1.05 = 21$$. If `scaleFactor` is equal to 1.3 in above image scaled block size is $$20 \times 1.3 = 26$$ so you may miss some pixels, so do some faces. Trade off is accuracy vs performance. 
 
 3rd parameter is `minNeighbors`. It defines how many neighbor rectangles should identified to retain it. Higher value means less false positives. 
 
@@ -108,7 +108,7 @@ Haar like features, named after the Hungarian mathematician Alfred Haar is a way
 
 ![Haar]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/haar.png)
 
-To calculate a feature 
+To calculate a feature following equation is used.
 
 $$
 Value = \text{(Sum of pixels in black area)} - \text{(Sum of pixels in white area)}
@@ -118,7 +118,7 @@ In the case of face detection following feature will give a higher value in the 
 
 ![Face]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/face.png)
 
-Eye area in the are generally darker than under the eye, so $$\text{(Black area - White area)}$$ will give higher value. And that's defines a feature.
+Eye area in the are generally darker than under the eye, so $$\text{(Black area - White area)}$$ will give higher value. And that's defines single feature.
 
 # Integral Image
 
@@ -128,7 +128,7 @@ $$
 ii(x, y) = \sum_{x{'} \le x, y{'} \le y} i(x', y')
 $$
 
-Every position is sum of the top and left values. Python code, note this code is written for clarity, there are more efficeint way to write but with less clarity. In this case you will be feeding a normalized image to the fuction. Purpose of normaizing first is to get rid of conditions ofl ighting effects.
+Every position is sum of the top and left values. Note this code is written for clarity, there are more efficeint way to write this. In this case you will be feeding a normalized image to the fuction. Purpose of normaizing first is to get rid of conditions of lighting effects.
 
 ```python
 def my_intergral_image(img):
@@ -179,27 +179,28 @@ def sum_region(integral_img, top_left, bottom_right):
 
 # AdaBoost (Adaptive Boosting)
 
-Now we need a way to select best features from all possible features that can correctly classify a face. Boosting is a very powerful idea in machine learning. It was fourmulated by Yoav Freund and Robert Schapire in 1997 and won the prestigious [Gödel Prize](https://en.wikipedia.org/wiki/G%C3%B6del_Prize) in 2003. This elegant machine learning approach can be applied to wide range of problems not only image detection.
+Now we need a way to select best features from all possible features that can correctly classify a face. AdaBoost algorithm was formulated by Yoav Freund and Robert Schapire in 1997 and won the prestigious [Gödel Prize](https://en.wikipedia.org/wiki/G%C3%B6del_Prize) in 2003. This elegant machine learning approach can be applied to wide range of problems not only image detection.
 
 I'll start with the idea of weak and strong classifiers.
 
 * Weak Classifier - Classifier that's little bit better than random guessing. 
 * Strong Classifier - A combination of weak classifiers. It represents wisdom of a weighted crowd of experts.
 
-Adaboost itself is a inhertantly incomplete algorithm, so it's called a meta algorithm one which will be build on top of or in combination with that makes the whole algorithm. Let's express the idea of a string classifier mathematically.
+Adaboost itself is a inhertantly incomplete algorithm, so it's called a meta algorithm. Let's express the idea of strong classifier mathematically.
 
 $$
 H(x) = sign\Big( h_1(x) + h_2(x) +  ... +h_T(x)\Big)
 $$
 
-H(x) is a strong classifier which classify according to the sign of sum of weak classifiers. Every weak classifier is a Haar feature combined with some other parameters I'll detail out in next few paragraphs. Suppose there are only 3 weak classifiers so $$T = 3$$. If every classifier output +1 or -1 then sum of weak classifier will have + or - sign.
+H(x) is a strong classifier which classify according to the sign of the sum of weak classifiers. Every weak classifier is a Haar feature combined with some other parameters I'll detail out in next few paragraphs. Suppose there are only 3 weak classifiers so $$T = 3$$. Every classifier outputs +1 or -1 so sum of weak classifier will have either + or - sign.
 
 $$
 H(x) = sign\Big( +1 + -1 + -1 \Big)
 $$
 
-Here strong classifier sign is negative so it may not be a face. I started with this analogy but we have to also weight the weak classifiers so some classifiers will have strong influence than others.
-By adding weights strong classifier get little complicated but nothing more than a simple inequality match.
+Here strong classifier sign is negative so it may not be a face. I started with this analogy but we have to also weight the weak classifiers because some classifiers may have strong influence than others.
+
+By adding weights strong classifier get little complicated but it's nothing more than a simple inequality match.
 
 $$
 H(x) = \begin{cases}
@@ -208,7 +209,7 @@ H(x) = \begin{cases}
      \end{cases}
 $$
 
-Now how we decide which weak classifier to use, which $$\alpha$$ weights to use? That's why we need to train over existing labeled data. Suppose image is $$x_i$$ and label is $$y_i$$ which is 1 for face and 0 for non face. Given example images $$(x_1, y_1), ... , (x_m, y_m)$$ we will initialize weights for each example. Don't confuse this weight with the alpha discussed before. This algorithm has two kind of weights. One is $$\alpha$$ weight for selected weak classifier. Another one is for each example for each step denoted by $$w_{t,i}$$. Now we are going to intialize weights mentioned later for step one $$t = 1$$
+Now how we decide which weak classifier to use, which $$\alpha$$ weights to use? That's why we need to train over existing labeled data. Suppose image is $$x_i$$ and label is $$y_i$$ which is 1 for face and 0 for non face. Given example images $$(x_1, y_1), ... , (x_m, y_m)$$ we will initialize weights for each example. Don't confuse this weight with the $$\alpha$$ weight discussed before. This algorithm has two kind of weights. One is $$\alpha$$ weight for selected weak classifier. Other one is for each example and each step denoted by $$w_{t,i}$$. Now we are going to intialize weights mentioned later for step one $$t = 1$$
 
 $$
 w_{1, i} = \frac{1}{m}
@@ -226,13 +227,13 @@ $$
 w_{t,i} = \frac{w_{t,i}}{\sum_{j = 0}^{m}w_{t,i}}
 $$
           
-Next we loop over all the features to select the best weak classifier which minimize the error rate.
+Next we loop over all the features to select the best weak classifier which minimize error rate.
 
 $$
 \epsilon_t = min_{f, p, \theta} \sum_{i = 1}^m w_{t, i} | h(x_i, f, p, \theta) - y_i |
 $$
 
-Here calculating the sum of weights of misclassified examples which is the error rate represented by epsilon $$\epsilon$$. Notice $$h(x_i, f, p, \theta) - y_i$$ return 1 or -1 if the misclassified. We are taking the absolute value out of it so weight get multiplied by 1. Let's dive into definition of weak classifier. 
+Here calculating the sum of weights of misclassified examples which is the error rate represented by epsilon $$\epsilon$$. Notice $$h(x_i, f, p, \theta) - y_i$$ return 1 or -1 if the misclassified, 0 is correctly classified. We are taking the absolute value out of it so weight get multiplied by 1 if misclassified. Let's dive into the definition of weak classifier. 
 
 $$
 h(x) = h(x_i, f, p, \theta)
@@ -242,9 +243,9 @@ $$x_i$$ is the $$i$$'th image example. $$f$$ is the Haar feature. $$p$$ is the p
 
 $$
 h(x, f, p , \theta) = \begin{cases}
-      1, \text{if}\ pf(x) < p\theta \\
-      0, \text{otherwise}
-     \end{cases}
+	1, \text{if } pf(x) \lt p\theta \\
+      	0, \text{otherwise}
+     	\end{cases}     
 $$
 
 To select the $$f$$ feature we need loop over f(x) Haar classifier. To select the threshold we need to minimize the following equation.
@@ -266,21 +267,21 @@ $$
 w_{t+1, i} = w_{t, i} \Big(\frac{\epsilon_t}{1 - \epsilon_t}\Big)^{1 -e_i}
 $$
 
-Where $$e_i = 0$$ if sample image $$x_i$$ is correctly classify, 0 otherwise. The goal of the equation is to make the weights of incorrectly classified samples slightly larger so in the next round unforgiving to weak classifiers that's going to classify same samples incorrectly. So in each step it's going choose a unique weak classifier. To do so in the above equation correctly classified weights will decreased so misclassified weights will increase relative to correctly correct weights. 
+Where $$e_i = 0$$ if sample image $$x_i$$ is correctly classified, 0 otherwise. The goal of the equation is to make the weights of incorrectly classified samples slightly larger so in the next round will be unforgiving to weak classifiers that's going to classify same samples incorrectly. So in each step it's going choose an unique weak classifier with unique feature. To do so in the above equation correctly classified weights will decreased so misclassified weights will increase relative to correct  weights. 
 
-Finally calculate the $$\alpha_t$$ for the selected classifier.
+Finally calculate $$\alpha_t$$ for the selected classifier.
 
 $$
 \alpha_t = log(\frac{1 - \epsilon_t}{\epsilon_t})
 $$
 
-Notice how $$\alpha$$ going to be higher value if error rate is small so that weak classifier has more contribution to strong classifier. 
+Notice how $$\alpha$$ going to be a higher value if error rate is small so that weak classifier has more contribution to strong classifier. 
 
-So finally algorithm need to loop $$T$$ steps to kind $$T$$ classifiers to get good results. 
+So finally algorithm need to loop $$T$$ steps to find $$T$$ classifiers to get good results. 
 
 # Cascading
 
-We may have noticed how many loops we have in the algorithm so this AdaBoost along with Haar Features are computationally expensive for real time detection. So we are using attentional cascade to reduce some unnecessary computations. More efficient cascade can be constructed that negative sub windows will rejected early. Every stage of cascade is a strong classifiers, so all the features are grouped into several stages where each stage has a several number of features. 
+You may have noticed how many loops we have in the algorithm so this AdaBoost along with Haar Features is computationally expensive for real time detection. So we are using attentional cascade to reduce some unnecessary computations. More efficient cascade can be constructed so that negative sub windows will rejected early. Every stage of cascade is a strong classifier, so all the features are grouped into several stages where each stage has a several number of features. 
 
 ![Cascade]({{ site.url }}/assets/posts/realtime-face-detection-using-opencv-and-python/cascade.png)
 
@@ -300,5 +301,12 @@ Now we are looping until pre defined $$F_{target}$$ is met by adding new stages.
 
 # Additional Resources
 
-* Original Paper (Revised)- [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf)
-* To learn more about AdaBoost - [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034)
+Paper (Revised) [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf).
+
+Viola Jones Python Implementation [Github](https://github.com/Simon-Hohberg/Viola-Jones)
+
+To learn more about AdaBoost read the  book [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034). It's written by the original authors of the algorithm.  
+
+Source code for the face detection in this post - [Realtime face detection](https://github.com/chamoda/RealtimeFaceDetection)
+
+Pull requests are welcome if you find anything wrong in the post - [Blog](https://github.com/chamoda/chamoda.github.io)
