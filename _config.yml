@@ -17,11 +17,9 @@ resume-external: false
 resume-url: https://google.com/?q=my+resume
 
 url: https://chamoda.com
-# your url: http://USERNAME.github.io
 
 permalink: /:title/
 
-# To enable google analytics, supply your token below
 analytics-google: 'UA-74150817-1'
 
 # To enable piwik tracking, supply your url & site ID below
@@ -35,13 +33,13 @@ disqus:
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
+email: hello@chamoda.com
 twitter: chamodac
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
 linkedin: chamoda-pandithage-793a90a2
 # youtube: myyoutube
-spotify: chamodac
 github: chamoda
 # lastfm: mylastfm
 stackoverflow: 1602606/chamoda
@@ -50,7 +48,6 @@ stackoverflow: 1602606/chamoda
 # medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: hello@chamoda.com
 
 authors:
     chamoda:
