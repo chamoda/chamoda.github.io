@@ -64,6 +64,8 @@ Implement the following method in `OpenCV.mm` file. This is for testing but you 
 
 Goto **File -> Project Settings** and click `Advance`. Select `Relative to workspace` from Custom.
 
+![Custom]({{ site.url }}/assets/posts/xamarin-opencv/custom.png)
+
 One more thing. Now we need to create a universal library from this to be able to run on both real devices, and simulators. Compile the app for `Generic Device` and a simulator twice. Then use following script to generate universal binary. Create a file name `make-opencv-lib.sh` in Xcode project and make it executable by `chmod +x make-opencv-lib.sh`.
 
 ```bash
@@ -75,8 +77,6 @@ lipo -info libOpenCVUniserval.a
 ```
 
 Then run it by typing `\.make-opencv-lib.sh`. If successful you will see a file called `libOpenCVUniserval.a` in your current directory.
-
-![Custom]({{ site.url }}/assets/posts/xamarin-opencv/custom.png)
 
 # Create binding project in Xamarin
 
