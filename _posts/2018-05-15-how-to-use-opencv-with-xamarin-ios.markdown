@@ -12,7 +12,7 @@ category: blog
 
 Recently I had to use OpenCV on a Xamarin iOS project. I'm writing this to remove few frustrating hours (or days) of anyone tries to do the same. Unfortunately you can't code opencv directly on Xamarin. You have to create a static framework using Xcode and write opencv functions using C++. Then you need to bind (map) the static framework to Xamarin using a binding project. 
 
-## Steps
+## Step by step overview
 
 * Download OpenCV
 * Create static library with Xcode
