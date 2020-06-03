@@ -233,7 +233,7 @@ model.predict(3)
 
 You can see that values are similar to our own implementation.
 
-Github repo of example code is available [here](https://github.com/chamoda/LinearRegression)
+Github repo of example code is available [here](https://github.com/chamoda/linear-regression)
 
 
 
