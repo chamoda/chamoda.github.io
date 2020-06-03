@@ -147,7 +147,7 @@ This will start a server at port 3000
 
 ![React]({{ site.url }}/assets/posts/connect-led-light-to-internet/react.png)
 
-I'm not going to detail out the code here, you can find the full source code in fronend folder of git [repo](https://github.com/chamoda/rpi-led-project)
+I'm not going to detail out the code here, you can find the full source code in fronend folder of git [repo](https://github.com/chamoda/raspberry-led)
 
 ## Open to Internet
 
