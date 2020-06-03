@@ -335,7 +335,7 @@ If you open `key.bin` file you can see that same data is there.
 
 # Additional Resources
 
-Toy RSA Algorithm - [Github](https://github.com/chamoda/rsa_algorithm)
+Toy RSA Algorithm - [Github](https://github.com/chamoda/rsa-algorithm)
 
 Original RSA Paper - [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems](https://people.csail.mit.edu/rivest/Rsapaper.pdf)
 
