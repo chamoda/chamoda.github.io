@@ -125,4 +125,4 @@ And if you are able to print the version as follows, congratulations you have co
 Console.WriteLine(OpenCV.Version());
 ```
 
-You can find the sample project source code [here](https://github.com/chamoda/XamarinOpenCV)
+You can find the sample project source code [here](https://github.com/chamoda/xamarin-opencv-template)
