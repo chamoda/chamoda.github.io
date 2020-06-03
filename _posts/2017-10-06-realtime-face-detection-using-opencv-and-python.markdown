@@ -307,6 +307,6 @@ Viola Jones Python Implementation [Github](https://github.com/Simon-Hohberg/Viol
 
 To learn more about AdaBoost read the  book [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034). It's written by the original authors of the algorithm.  
 
-Source code for the face detection in this post - [Realtime face detection](https://github.com/chamoda/RealtimeFaceDetection)
+Source code for the face detection in this post - [Realtime face detection](https://github.com/chamoda/realtime-face-detection)
 
 Pull requests are welcome if you find anything wrong in the post - [Blog](https://github.com/chamoda/chamoda.github.io)
