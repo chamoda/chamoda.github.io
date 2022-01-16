@@ -1,12 +1,7 @@
 ---
 title: "Public-key Cryptography Explained"
 layout: post
-date: 2017-12-13 14:40
-tag:
-- Cryptography 
-- Python
-category: blog
-star: false
+date: 2017-12-13
 ---
 
 Public-key cryptography is one of the most used cryptosystems today. It refers to any system that uses a key pair, one for encrypting data and another one for decrypting data. If data encrypted using a key, other key is used to decrypt it. This seems pretty magical at first, but in the end of blog post you will understand how this works. In this blog post I'll start with an analogy to understand what is the purpose of using two key pairs. Then I'll explain the mathematical concepts behind the algorithm. Then I'll implement a toy algorithm to understand it further (But never design your own crypto algorithms). Next I'll explain some `openssl` commands to generate RSA public and private keys which you can use in real world applications.
@@ -223,63 +218,44 @@ from fractions import gcd
 `from Crypto.Util import number` for generating random primes. 
 
 ```python
-class RSA:
-    
+class RSA:    
     p = q = n = d = e = pi_n = 0
     
-    def __init__(self):
-        
+    def __init__(self):        
         self.generate()
         
-    def generate(self):
-        
+    def generate(self):        
         self.p = number.getPrime(10, os.urandom)
-        self.q = number.getPrime(10, os.urandom)
-        
-        self.n = self.p * self.q
-        
-        self.pi_n = (self.p - 1) * (self.q - 1)
-        
-        self.d = self.choose_d()
-        
+        self.q = number.getPrime(10, os.urandom)        
+        self.n = self.p * self.q        
+        self.pi_n = (self.p - 1) * (self.q - 1)        
+        self.d = self.choose_d()        
         self.e = self.choose_e()
         
-    def choose_d(self):
-        
-        self.d = self.find_a_coprime(self.pi_n)
-        
+    def choose_d(self):        
+        self.d = self.find_a_coprime(self.pi_n)        
         return self.d
                     
-    def find_a_coprime(self, a):
-        
-        for i in range(2, a):
-            
-            if gcd(i, a) == 1:
-                
+    def find_a_coprime(self, a):        
+        for i in range(2, a):            
+            if gcd(i, a) == 1:                
                 return i
             
-    def choose_e(self):
-        
-        for i in range(self.n):
-            
-            if (i * self.d) % self.pi_n == 1:
-                
+    def choose_e(self):        
+        for i in range(self.n):            
+            if (i * self.d) % self.pi_n == 1:                
                 return i
     
-    def public_key(self):
-        
+    def public_key(self):        
         return (self.e, self.n)
     
-    def private_key(self):
-        
+    def private_key(self):        
         return (self.d, self.n)
     
-    def encrypt(self, m, key):
-        
+    def encrypt(self, m, key):        
         return pow(m, key[0]) % key[1]
     
-    def decrypt(self, c, key):
-        
+    def decrypt(self, c, key):        
         return pow(c, key[0]) % key[1]
 ```
 
@@ -335,16 +311,10 @@ If you open `key.bin` file you can see that same data is there.
 
 # Additional Resources
 
-Toy RSA Algorithm - [Github](https://github.com/chamoda/rsa-algorithm)
-
-Original RSA Paper - [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems](https://people.csail.mit.edu/rivest/Rsapaper.pdf)
-
-Modular Arithmetic - [Wikipedia](https://en.wikipedia.org/wiki/Modular_arithmetic)
-
-Fermat's Little Theorem - [Wikipedia](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem)
-
-Coprime integers - [Wikipedia](https://en.wikipedia.org/wiki/Coprime_integers)
-
-Euler's totient function - [Wikipedia](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
-
-Modular multiplicative inverse - [Wikipedia](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse)
+* Toy RSA Algorithm - [Github](https://github.com/chamoda/rsa-algorithm)
+* Original RSA Paper - [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems](https://people.csail.mit.edu/rivest/Rsapaper.pdf)
+* Modular Arithmetic - [Wikipedia](https://en.wikipedia.org/wiki/Modular_arithmetic)
+* Fermat's Little Theorem - [Wikipedia](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem)
+* Coprime integers - [Wikipedia](https://en.wikipedia.org/wiki/Coprime_integers)
+* Euler's totient function - [Wikipedia](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
+* Modular multiplicative inverse - [Wikipedia](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse)

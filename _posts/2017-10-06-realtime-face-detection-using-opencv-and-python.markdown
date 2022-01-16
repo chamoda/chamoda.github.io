@@ -1,15 +1,7 @@
 ---
 title: "Real time face detection using OpenCV and Python"
 layout: post
-date: 2017-11-18 14:40
-tag:
-- machine-learning
-- AI
-- python
-- OpenCV
-- OSX
-category: blog
-#star: false
+date: 2017-11-18
 ---
 
 Detection is an important application of computer vision. In this post I'm going to detail out how to do real time face detection using Viola Jones Algorithm introduced in paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, means which one the face belong. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so will use, preferably python.
@@ -33,29 +25,22 @@ Let's do a quick implementation.
 import cv2
 
 cap = cv2.VideoCapture("input.mp4")
-
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while(True):
-
     ret, frame = cap.read()
-
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     faces = face_cascade.detectMultiScale(gray, 1.3, 5) 
     
     for (x,y,w,h) in faces:
-
       cv2.rectangle(frame, (x, y), (x+w, y+h), (0 , 0, 255), 2)
     
     cv2.imshow('frame', frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        
+    if cv2.waitKey(1) & 0xFF == ord('q'):        
         break
 
 cap.release()
-
 cv2.destroyAllWindows()
 ```
 
@@ -85,7 +70,6 @@ Next we draw red rectangles if faces detected. Notice how we passed red color in
 
 ```python
 for (x,y,w,h) in faces:
-
       cv2.rectangle(frame, (x, y), (x+w, y+h), (0 , 0, 255), 2)
 ```
 
@@ -301,12 +285,8 @@ Now we are looping until pre defined $$F_{target}$$ is met by adding new stages.
 
 # Additional Resources
 
-Paper (Revised) [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf).
-
-Viola Jones Python Implementation [Github](https://github.com/Simon-Hohberg/Viola-Jones)
-
-To learn more about AdaBoost read the  book [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034). It's written by the original authors of the algorithm.  
-
-Source code for the face detection in this post - [Realtime face detection](https://github.com/chamoda/realtime-face-detection)
-
-Pull requests are welcome if you find anything wrong in the post - [Blog](https://github.com/chamoda/chamoda.github.io)
+* Paper (Revised) [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf).
+* Viola Jones Python Implementation [Github](https://github.com/Simon-Hohberg/Viola-Jones)
+* To learn more about AdaBoost read the  book [Boosting Foundations and Algorithms](https://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034). It's written by the original authors of the algorithm.  
+* Source code for the face detection in this post - [Realtime face detection](https://github.com/chamoda/realtime-face-detection)
+* Pull requests are welcome if you find anything wrong in the post - [Blog](https://github.com/chamoda/chamoda.github.io)

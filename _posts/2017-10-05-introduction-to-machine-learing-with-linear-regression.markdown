@@ -1,14 +1,7 @@
 ---
 title: "Introduction to Machine Learning with Linear Regression"
 layout: post
-date: 2017-10-05 14:40
-tag:
-- machine-learning
-- ai
-- python
-- scikit-learn
-category: blog
-#star: false
+date: 2017-10-05
 ---
 
 Machine learning is all about computers learning itself from data to predict new data. There are two types of categories in machine learning
@@ -162,13 +155,10 @@ Now let's look at the equivalent python code.
 ```python
 theta0 = 0
 theta1 = 0
-
 alpha = 0.001
-
 iteration = 0
 
-while True:
-    
+while True:    
     temp0 = (1 / m) * np.sum(h(x, theta0, theta1) - y)
     temp1 = (1 / m) * np.sum((h(x, theta0, theta1) - y) * x)
     
@@ -234,11 +224,3 @@ model.predict(3)
 You can see that values are similar to our own implementation.
 
 Github repo of example code is available [here](https://github.com/chamoda/linear-regression)
-
-
-
-
-
-
-
-
