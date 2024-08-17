@@ -1,0 +1,16 @@
+---
+layout: page
+title: What I Read
+permalink: /whatiread/
+---
+
+{% for post in site.whatiread %}
+{% if post.published %}
+  <h2 class="post-title p-name">
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.year }} {{ post.month }}</a>
+  </h2>
+{% endif %}
+{% endfor %}
+
+
+
