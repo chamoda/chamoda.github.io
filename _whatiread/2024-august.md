@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What I Read In 2024 August
+title: What I Read in August 2024
 year: 2024
 month: August
 date: 2024-08-17
