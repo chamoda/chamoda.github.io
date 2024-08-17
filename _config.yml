@@ -21,10 +21,9 @@
 title: Chamoda Pandithage
 email: hello@chamoda.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Occasionally updated.
+  Occasionally updated12
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: chamoda
 
 # Build settings
 theme: minima
@@ -32,6 +31,12 @@ plugins:
   - jekyll-feed
 
 markdown: kramdown
+
+collections:
+  whatiread:
+    output: true
+    permalink: /:collection/:name
+    
 
 # Google Analytics
 google_analytics: UA-74150817-1
