@@ -21,7 +21,7 @@
 title: Chamoda Pandithage
 email: hello@chamoda.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Occasionally updated12
+  Personal musings on programming, math and philosophy.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
