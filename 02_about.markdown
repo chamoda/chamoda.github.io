@@ -8,7 +8,9 @@ permalink: /about/
 
 Software architect with a strong inclination for problem-solving, and autonomy. Enjoys programming in Python and Go. Passionate about building startups!
 
-Checkout my small firm **[xaventra](https://xaventra.com)** where I help others build startups. If you are looking for a CTO to build your startup feel free to contact me!
+Checkout my small firm **[xaventra](https://xaventra.com)** where I help others build startups.
+
+Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/assets/publickey.asc))
 
 #### Some interesting links.
 
