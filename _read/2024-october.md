@@ -26,7 +26,7 @@ Key personal takeaways,
 
 Just read this as foundational precursor to Adam Smith's The Wealth of Nations. This books is one of one of the earliest works to introduce the concept of the "entrepreneur".
 
-#### [Elon Musk by Walter Isaacson (goodreads.com)](https://www.goodreads.com/book/show/9121382-an-essay-on-economic-theory)
+#### [Elon Musk by Walter Isaacson (goodreads.com)](https://www.goodreads.com/book/show/122765395-elon-musk)
 
 I picked this up because I’ve enjoyed most of Walter Isaacson's previous biographies, but this one doesn’t quite measure up to his previous work. 
 
