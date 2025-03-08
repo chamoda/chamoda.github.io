@@ -11,6 +11,9 @@ published: true
 
 ####  [Robust Python: Write Clean and Maintainable Code by Patrick Viafore (goodreads.com)](https://www.goodreads.com/book/show/58218460-robust-python)
 
+####  [The Beginning of Infinity by David Deutsch (goodreads.com)](https://www.goodreads.com/book/show/10483171-the-beginning-of-infinity)
+
+
 
 
 
