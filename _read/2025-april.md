@@ -9,6 +9,8 @@ published: false
 
 ### Books
 
+####  [The Effective Manager (goodreads.com)](https://www.goodreads.com/book/show/27316166-the-effective-manager)
+
 ####  [The Effective Hiring Manager (goodreads.com)](https://www.goodreads.com/book/show/43331782-the-effective-hiring-manager)
 
 
