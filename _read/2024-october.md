@@ -14,7 +14,7 @@ published: true
 Key personal takeaways,
 
 * Start design with a feature, not layout.
-* Define a design systems in advance.
+* Define a design system in advance.
 * Understanding visual hierarchy is key to good design.
 * Semantics are secondary, hierarchy is more important.
 * Separate visual hierarchy from document hierarchy.
@@ -24,7 +24,7 @@ Key personal takeaways,
 
 #### [An Essay on Economic Theory by Richard Cantillon (goodreads.com)](https://www.goodreads.com/book/show/9121382-an-essay-on-economic-theory)
 
-Just read this as foundational precursor to Adam Smith's The Wealth of Nations. This books is one of one of the earliest works to introduce the concept of the "entrepreneur".
+Just read this as a foundational precursor to Adam Smith's The Wealth of Nations. This book is one of the earliest works to introduce the concept of the "entrepreneur".
 
 #### [Elon Musk by Walter Isaacson (goodreads.com)](https://www.goodreads.com/book/show/122765395-elon-musk)
 

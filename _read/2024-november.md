@@ -16,9 +16,9 @@ This was a fascinating read on Zettelkasten note-taking techniques, with a few k
 * Non-fiction writing is not simply a process of sitting down and writing an article or book straight from the thoughts in your head
 * You have to build your knowledge/fact base long term.
 * Zettelkasten (German for slip box) is a good approach for this.
-* Ones you have good enough knowledge/fact base referable, writing something good for publish is just about rephrasing, rearranging your notes.
+* Once you have a good enough knowledge/fact base for reference, writing something good for publication is just about rephrasing and rearranging your notes.
 * Good, productive writing starts with good note-taking.
-* GTD (Getting things done) can't be transferred directly in to insightful writing tasks.
+* GTD (Getting things done) can't be transferred directly into insightful writing tasks.
 
 #### [Project Hail Mary by Andy Weir (goodreads.com)](https://www.goodreads.com/book/show/54493401-project-hail-mary)
 
