@@ -4,7 +4,7 @@ title: What I Read
 permalink: /read/
 ---
 
-{% for post in site.read %}
+{% for post in site.read reversed %}
 {% if post.published %}
   <h2 class="post-title p-name">
     <a class="post-link" href="{{ post.url | relative_url }}">{{ post.year }} {{ post.month }}</a>
