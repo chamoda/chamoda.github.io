@@ -1,0 +1,25 @@
+* Jekyll Best Practices Improvements
+
+** DONE Add site URL to _config.yml
+   - [X] Set url field to "https://chamoda.com"
+   - [X] Ensure CNAME file matches the domain
+
+** TODO Install and configure SEO plugins
+   - [ ] Add jekyll-seo-tag to Gemfile
+   - [ ] Add jekyll-sitemap to Gemfile
+   - [ ] Configure plugins in _config.yml
+   - [ ] Add SEO tag to head.html
+
+** TODO Configure build exclusions
+   - [ ] Exclude Docker files from Jekyll build
+   - [ ] Exclude README.md from build
+   - [ ] Exclude other development files
+
+** TODO Consider custom layouts
+   - [ ] Create _layouts directory
+   - [ ] Add custom post layout
+   - [ ] Add custom page layout
+
+** TODO Add meta descriptions to posts
+   - [ ] Add description to post front matter
+   - [ ] Update existing posts with descriptions
