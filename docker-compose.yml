@@ -3,7 +3,7 @@ version: '3'
 services:
   jekyll:
     image: jekyll/jekyll:4.2.0
-    command: jekyll serve --incremental --livereload
+    command: jekyll serve --livereload --force_polling
     ports:
       - "4000:4000"
       - "35729:35729"
