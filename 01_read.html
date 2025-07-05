@@ -4,12 +4,31 @@ title: What I Read
 permalink: /read/
 ---
 
-{% for post in site.read reversed %}
-{% if post.published %}
-  <h2 class="post-title p-name">
-    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.year }} {{ post.month }}</a>
-  </h2>
-{% endif %}
+<style>
+.year-title {
+  font-size: 1.2rem !important;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+.month-list {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.month-list a {
+  font-size: 1.2rem;
+}
+</style>
+
+{% assign posts_by_year = site.read | where: "published", true | group_by: "year" | sort: "name" | reverse %}
+{% for year_group in posts_by_year %}
+  <h3 class="year-title">{{ year_group.name }}</h3>
+  <ul class="month-list">
+    {% assign months = year_group.items | sort: "date" | reverse %}
+    {% for post in months %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.month }}</a></li>
+    {% endfor %}
+  </ul>
 {% endfor %}
 
 
