@@ -15,7 +15,7 @@ This was quite a journey over 4 months, but I believe it was well worth the effo
 
 #### [Designing Data-Intensive Applications by Martin Kleppmann (goodreads.com)](https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications)
 
-Highly recommended for every programmer. Perception depends on how much do you know already but coverts following topics
+Highly recommended for every programmer. Perception depends on how much you know already but covers the following topics:
 
 * Relational vs Document data models
 * Graph based modeling
@@ -28,7 +28,7 @@ Highly recommended for every programmer. Perception depends on how much do you k
 
 #### [Fast, Feast, Repeat by Gin Stephens (goodreads.com)](https://www.goodreads.com/book/show/51168294-fast-feast-repeat)
 
-Taught me how to approach intermittent fasting from first principles. The key takeaway was to avoid triggering any insulin response during the fast. Even something as small as chewing gum with additives can cause trigger insulin response without actual food intake.
+Taught me how to approach intermittent fasting from first principles. The key takeaway was to avoid triggering any insulin response during the fast. Even something as small as chewing gum with additives can trigger an insulin response without actual food intake.
 
 The only intakes allowed during fasting are
 
@@ -44,10 +44,10 @@ Excellent article explaining the reasoning behind every aspect of OAuth, rooted 
 
 #### [The Art of Finishing (bytedrum.com)](https://www.bytedrum.com/posts/art-of-finishing)
 
-Great set of tips to finsh your next side project. In a summary,
+Great set of tips to finish your next side project. In summary:
 
 * Define "Done" from the start
-* Embarve MVP
+* Embrace MVP
 * Give yourself a deadline
 
 

@@ -18,7 +18,7 @@ Key personal takeaways,
 * Understanding visual hierarchy is key to good design.
 * Semantics are secondary, hierarchy is more important.
 * Separate visual hierarchy from document hierarchy.
-* Developing an eye for all of the details that make a good typeface can take years, meanwhile steal from people that cares about typefaces.
+* Developing an eye for all of the details that make a good typeface can take years, meanwhile steal from people who care about typefaces.
 * Baseline, don't center.
 * Ditch Hex for HSL.
 

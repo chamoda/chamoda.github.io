@@ -9,7 +9,7 @@ Machine learning is all about computers learning from data to predict new data. 
 * Supervised Learning
 * Unsupervised Learning
 
-In supervised learning computer learns from input and output while creating a general model which can be used to predict output from new input. Unsupervised learning is about discovering pattern in data without knowing explicit labels beforehand. In this post I'm going to talk about linear regression which is a supervised learning method.
+In supervised learning computer learns from input and output while creating a general model which can be used to predict output from new input. Unsupervised learning is about discovering patterns in data without knowing explicit labels beforehand. In this post I'm going to talk about linear regression which is a supervised learning method.
 
 # Jupyter Notebook
 
@@ -52,7 +52,7 @@ This is the plot generated from the code. Every blue dot is a data point. There 
 
 ![plot]({{ site.url }}/assets/posts/linear-regression/plot.png)
 
-Data is distributed in sort of linear nature because of the way we generate random data. 
+Data is distributed in a sort of linear nature because of the way we generate random data. 
 
 # Linear Regression
 

@@ -4,7 +4,7 @@ layout: post
 date: 2017-11-18
 ---
 
-Detection is an important application of computer vision. In this post I'm going to detail how to do real time face detection using the Viola Jones Algorithm introduced in the paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, meaning which one the face belongs to. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so we will use, preferably python.
+Detection is an important application in computer vision. In this post I'm going to detail how to do real time face detection using the Viola Jones Algorithm introduced in the paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, meaning which one the face belongs to. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so we will use, preferably python.
 
 # Installation
 
@@ -73,7 +73,7 @@ for (x,y,w,h) in faces:
       cv2.rectangle(frame, (x, y), (x+w, y+h), (0 , 0, 255), 2)
 ```
 
-Next we are writing to a window frame by frame. If you press the key `q` the loop will break and the video will stop. I've created a quick video from the output here. Notice how it detects only frontal faces, because the model is trained for frontal faces.
+Next we are writing to a window frame by frame. If you press the key `q` the loop will break and the video will stop. I've created a quick video from the output here. Notice how it detects only frontal faces because the model is trained for frontal faces.
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/eAJwY8fQvXs" frameborder="0" allowfullscreen></iframe>
 

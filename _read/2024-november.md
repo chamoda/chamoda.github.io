@@ -11,7 +11,7 @@ published: true
 
 #### [How to Take Smart Notes by Sönke Ahrens (goodreads.com)](https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes)
 
-This was a fascinating read on Zettelkasten note-taking techniques, with a few key takeaways from the book
+This was a fascinating read on Zettelkasten note-taking techniques. Here are a few key takeaways from the book:
 
 * Non-fiction writing is not simply a process of sitting down and writing an article or book straight from the thoughts in your head
 * You have to build your knowledge/fact base long term.

@@ -8,7 +8,7 @@ permalink: /about/
 
 Software architect with a strong inclination for problem-solving, and autonomy. Enjoys programming in Python and Go. Passionate about building startups!
 
-Checkout my small firm **[xaventra](https://xaventra.com)** where I help others build startups.
+Check out my firm **[xaventra](https://xaventra.com)** where I help others build startups.
 
 Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/assets/publickey.asc))
 
@@ -23,7 +23,7 @@ Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/asse
 
 **Q: Operating system?**
 
-**A:** Debian + i3wm. Checkout my [dotfiles](https://github.com/chamoda/dotfiles) here.
+**A:** Debian + i3wm. Check out my [dotfiles](https://github.com/chamoda/dotfiles) here.
 
 **Q: Text editor?**
 
