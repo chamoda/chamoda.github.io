@@ -2,6 +2,7 @@
 title: "Public-key Cryptography Explained"
 layout: post
 date: 2017-12-13
+description: "Understand how public-key cryptography works with RSA encryption. Learn the mathematical concepts, see a toy implementation, and get practical OpenSSL commands for real-world use."
 ---
 
 Public-key cryptography is one of the most used cryptosystems today. It refers to any system that uses a key pair, one for encrypting data and another one for decrypting data. If data is encrypted using a key, the other key is used to decrypt it. This seems pretty magical at first, but by the end of this blog post you will understand how this works. In this blog post I'll start with an analogy to understand what the purpose of using two key pairs is. Then I'll explain the mathematical concepts behind the algorithm. Then I'll implement a toy algorithm to understand it further (But never design your own crypto algorithms). Next I'll explain some `openssl` commands to generate RSA public and private keys which you can use in real world applications.

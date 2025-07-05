@@ -2,6 +2,7 @@
 title: "Real time face detection using OpenCV and Python"
 layout: post
 date: 2017-11-18
+description: "Learn how to implement real-time face detection using OpenCV and Python with the Viola-Jones algorithm. Complete tutorial with code examples and Haar cascades."
 ---
 
 Detection is an important application in computer vision. In this post I'm going to detail how to do real time face detection using the Viola Jones Algorithm introduced in the paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, meaning which one the face belongs to. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so we will use, preferably python.

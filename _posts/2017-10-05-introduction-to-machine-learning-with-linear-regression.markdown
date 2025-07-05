@@ -2,6 +2,7 @@
 title: "Introduction to Machine Learning with Linear Regression"
 layout: post
 date: 2017-10-05
+description: "Learn the basics of machine learning with linear regression - covering supervised vs unsupervised learning, data visualization with Python, and implementing gradient descent from scratch."
 ---
 
 Machine learning is all about computers learning from data to predict new data. There are two types of categories in machine learning
