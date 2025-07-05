@@ -4,16 +4,20 @@
    - [X] Set url field to "https://chamoda.com"
    - [X] Ensure CNAME file matches the domain
 
-** TODO Install and configure SEO plugins
-   - [ ] Add jekyll-seo-tag to Gemfile
-   - [ ] Add jekyll-sitemap to Gemfile
-   - [ ] Configure plugins in _config.yml
-   - [ ] Add SEO tag to head.html
+** DONE Install and configure SEO plugins
+   - [X] Add jekyll-seo-tag to Gemfile
+   - [X] Add jekyll-sitemap to Gemfile
+   - [X] Configure plugins in _config.yml
+   - [X] Add SEO tag to head.html (already present)
+   - [X] Verified sitemap.xml generation
+   - [X] Verified SEO meta tags in HTML output
+   - [X] Verified robots.txt generation
+   - [X] Confirmed correct URLs in production mode
 
-** TODO Configure build exclusions
-   - [ ] Exclude Docker files from Jekyll build
-   - [ ] Exclude README.md from build
-   - [ ] Exclude other development files
+** DONE Configure build exclusions
+   - [X] Exclude Docker files from Jekyll build
+   - [X] Exclude README.md from build
+   - [X] Exclude other development files (todo.org)
 
 ** TODO Consider custom layouts
    - [ ] Create _layouts directory
