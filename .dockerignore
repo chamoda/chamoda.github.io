@@ -1,0 +1,9 @@
+_site
+.jekyll-cache
+.sass-cache
+.jekyll-metadata
+vendor
+.git
+.gitignore
+README.md
+.github

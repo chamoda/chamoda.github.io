@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:4.2.0
+    command: jekyll serve --incremental --livereload
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - .:/srv/jekyll
+      - jekyll-gems:/usr/gem
+    environment:
+      - JEKYLL_ENV=development
+
+volumes:
+  jekyll-gems:
