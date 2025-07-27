@@ -6,9 +6,9 @@ permalink: /about/
 
 #### Intro
 
-Software architect with a strong inclination for problem-solving, and autonomy. Enjoys programming in Python and Go. Passionate about building startups!
+I'm a software architect with a passion for solving complex problems and building scalable systems. I specialize in Python and Go development, with experience across the full stack from backend services to system architecture.
 
-Check out my firm **[xaventra](https://xaventra.com)** where I help others build startups.
+Currently focused on helping entrepreneurs turn their ideas into reality through my consultancy **[xaventra](https://xaventra.com)**, where I provide technical guidance and development services for early-stage startups.
 
 Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/assets/publickey.asc))
 
