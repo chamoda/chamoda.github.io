@@ -3,7 +3,7 @@ layout: post
 title: What I Read in August 2025
 year: 2025
 month: August
-date: 2025-08-30
+date: 2025-08-01
 published: true
 ---
 
