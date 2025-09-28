@@ -8,11 +8,12 @@ permalink: /about/
 
 I'm a software architect who discovered that building great technology is only half the fun - turning ideas into thriving businesses is where the real magic happens. With deep expertise in Python and Go across the full stack, I love crafting scalable systems that solve real problems and create meaningful impact.
 
-#### I've founded several companies including:
+#### I've founded/co-founded several companies including:
 
-* **[Xaventra](https://xaventra.com)** - Technical consultancy helping entrepreneurs turn their ideas into reality
-* **[Growthscope](https://growthscope.lk)** - Growth marketing agency helping brands build measurable growth
-* **[Almastack](https://almastack.com)** - Platform for simplified Moodle LMS management for educators and institutions
+* [Neurux](https://neurux.ai) - Enterprise AI platform providing secure and scalable AI solutions
+* [Almastack](https://almastack.com) - Platform for simplified Moodle LMS management for educators and institutions
+* [Xaventra](https://xaventra.com) - Technical consultancy helping entrepreneurs turn their ideas into reality
+* [Growthscope](https://growthscope.lk) - Growth marketing agency helping brands build measurable growth
 
 #### Some interesting links.
 
