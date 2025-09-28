@@ -11,5 +11,5 @@ published: true
 
 #### [The SaaS Playbook by Rob Walling](https://www.goodreads.com/book/show/178816351-the-saas-playbook)
 
-#### [Intercom on Jobs to be Done by Des Traynor](https://www.goodreads.com/review/show/7947826051)
+#### [Intercom on Jobs to be Done by Des Traynor](https://www.goodreads.com/book/show/30314875-intercom-on-jobs-to-be-done)
 

@@ -6,11 +6,13 @@ permalink: /about/
 
 #### Intro
 
-I'm a software architect with a passion for solving complex problems and building scalable systems. I specialize in Python and Go development, with experience across the full stack from backend services to system architecture.
+I'm a software architect who discovered that building great technology is only half the fun - turning ideas into thriving businesses is where the real magic happens. With deep expertise in Python and Go across the full stack, I love crafting scalable systems that solve real problems and create meaningful impact.
 
-Currently focused on helping entrepreneurs turn their ideas into reality through my consultancy **[xaventra](https://xaventra.com)**, where I provide technical guidance and development services for early-stage startups.
+#### I've founded several companies including:
 
-Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/assets/publickey.asc))
+* **[Xaventra](https://xaventra.com)** - Technical consultancy helping entrepreneurs turn their ideas into reality
+* **[Growthscope](https://growthscope.lk)** - Growth marketing agency helping brands build measurable growth
+* **[Almastack](https://almastack.com)** - Platform for simplified Moodle LMS management for educators and institutions
 
 #### Some interesting links.
 
@@ -33,7 +35,9 @@ Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/asse
 
 **A:** [HKKB](https://www.hhkeyboard.com/uk/products/hybrid)
 
+#### Contact
 
+Email: [hello@chamoda.com](mailto:hello@chamoda.com) ([openpgp public key](/assets/publickey.asc))
 
 
 
