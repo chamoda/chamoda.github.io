@@ -6,7 +6,7 @@ permalink: /about/
 
 #### Intro
 
-I'm a software architect who discovered that building great technology is only half the fun - turning ideas into thriving businesses is where the real magic happens. With deep expertise in Python and Go across the full stack, I love crafting scalable systems that solve real problems and create meaningful impact.
+I'm a software architect and serial entrepreneur specializing in building technology-driven businesses that scale. With extensive experience in Python and Go across the full stack, I architect systems that drive measurable business value and sustainable growth. My passion lies in the startup ecosystem—from founding and scaling ventures to advising early-stage companies on technical strategy and product development. I focus on transforming innovative ideas into commercially viable solutions that create lasting market impact.
 
 #### I've founded, co-founded, and serve as CTO at several companies:
 
@@ -22,20 +22,6 @@ I'm a software architect who discovered that building great technology is only h
 * [X](https://x.com/0xchmod)
 * [Linkedin](https://www.linkedin.com/in/chamoda-pandithage-793a90a2/)
 * [Goodreads](https://www.goodreads.com/user/show/5980292-chamoda-pandithage)
-
-#### FAQ
-
-**Q: Operating system?**
-
-**A:** Debian + i3wm. Check out my [dotfiles](https://github.com/chamoda/dotfiles) here.
-
-**Q: Text editor?**
-
-**A:** [Emacs](https://github.com/chamoda/.emacs.d)
-
-**Q: Keyboard?**
-
-**A:** [HKKB](https://www.hhkeyboard.com/uk/products/hybrid)
 
 #### Contact
 
