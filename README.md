@@ -1,9 +1,39 @@
-## Development with Docker
+## Development Setup
 
-### Serve the site
+### Prerequisites
+
+Install Ruby and development tools:
 ```bash
-docker compose up
+sudo apt update
+sudo apt install ruby-full build-essential zlib1g-dev
 ```
+
+Configure gem installation directory (to avoid using sudo):
+```bash
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Install Jekyll and Bundler:
+```bash
+gem install jekyll bundler
+```
+
+### Initial Setup
+
+Install project dependencies:
+```bash
+bundle install
+```
+
+### Run the site
+
+```bash
+bundle exec jekyll serve --livereload --incremental --watch
+```
+
+The site will be available at `http://localhost:4000`
 
 ### Installing Jekyll Plugins
 
@@ -20,15 +50,9 @@ docker compose up
      - plugin-name
    ```
 
-3. Install the gems inside the Docker container:
+3. Install the new gem:
    ```bash
-   docker-compose run --rm jekyll bundle install
+   bundle install
    ```
 
-4. Restart the Jekyll server:
-   ```bash
-   docker-compose down
-   docker-compose up
-   ```
-
-The installed gems are persisted in the `jekyll-gems` volume, so they remain available between container restarts.
+4. Restart the Jekyll server (Ctrl+C and run the serve command again)
