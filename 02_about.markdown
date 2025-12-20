@@ -6,7 +6,7 @@ permalink: /about/
 
 #### Intro
 
-I'm a software architect and serial entrepreneur building scalable businesses. I work across the full stack with Python, Go, TypeScript, and Rust, founding ventures and advising early-stage companies on technical strategy.
+I'm a software architect and serial entrepreneur building scalable businesses. I architect systems with Python, Go, TypeScript, and Rust, founding ventures and advising early-stage companies on technical strategy.
 
 #### I've founded, co-founded, and serve as CTO at several companies:
 
