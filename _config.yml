@@ -34,6 +34,7 @@ plugins:
 
 markdown: kramdown
 future: true
+permalink: /:title
 
 collections:
   read:
