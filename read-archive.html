@@ -1,13 +1,12 @@
 ---
 layout: default
-title: What I Read
-permalink: /read/
+permalink: /read/archive/
 ---
 
 <h2 class="post-list-heading"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -4px; margin-right: 2px;">
   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-</svg>What I Read</h2>
+</svg>Reading Archive</h2>
 
 <style>
 .year-title {
@@ -26,7 +25,7 @@ permalink: /read/
 </style>
 
 {% assign posts_by_year = site.read | where: "published", true | group_by: "year" | sort: "name" | reverse %}
-{% for year_group in posts_by_year limit: 2 %}
+{% for year_group in posts_by_year %}
   <h3 class="year-title">{{ year_group.name }}</h3>
   <ul class="month-list">
     {% assign months = year_group.items | sort: "date" | reverse %}
@@ -35,8 +34,3 @@ permalink: /read/
     {% endfor %}
   </ul>
 {% endfor %}
-
-<p class="rss-subscribe"><a href="/read/archive/">archive</a> · subscribe <a href="/feed-read.xml">via RSS</a></p>
-
-
-
