@@ -1,0 +1,18 @@
+---
+---
+
+@import "minima";
+
+// Override base font size
+body {
+  font-size: 20px;
+}
+
+// Adjust related font sizes proportionally
+blockquote {
+  font-size: 22px;
+}
+
+code, pre {
+  font-size: 18px;
+}
