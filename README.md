@@ -29,11 +29,23 @@ bundle install
 
 ### Run the site
 
+Using Make (recommended):
+```bash
+make run
+```
+
+Or directly with bundle:
 ```bash
 bundle exec jekyll serve --livereload --incremental --watch
 ```
 
 The site will be available at `http://localhost:4000`
+
+### Other Make Commands
+
+- `make build` - Build the site
+- `make clean` - Remove generated files
+- `make install` - Install dependencies
 
 ### Installing Jekyll Plugins
 
