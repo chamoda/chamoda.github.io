@@ -33,12 +33,16 @@ plugins:
   - jekyll-sitemap
 
 markdown: kramdown
+future: true
 
 collections:
   read:
     output: true
     permalink: /:collection/:name
-    
+  sparks:
+    output: true
+    permalink: /:collection/:name
+
 
 # Google Analytics
 google_analytics: UA-74150817-1

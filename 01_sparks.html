@@ -1,0 +1,36 @@
+---
+layout: page
+title: Sparks
+permalink: /sparks/
+---
+
+<style>
+.spark-item {
+  margin-bottom: 1.5rem;
+}
+.spark-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.spark-title a {
+  color: #111;
+  text-decoration: none;
+}
+.spark-title a:hover {
+  text-decoration: underline;
+}
+.spark-date {
+  color: #828282;
+  font-size: 0.9rem;
+}
+</style>
+
+{% assign sorted_sparks = site.sparks | sort: "date" | reverse %}
+{% for spark in sorted_sparks %}
+  <article class="spark-item">
+    <div class="spark-title">
+      <a href="{{ spark.url | relative_url }}">{{ spark.title }}</a>
+    </div>
+    <div class="spark-date">{{ spark.date | date: "%B %-d, %Y" }}</div>
+  </article>
+{% endfor %}
