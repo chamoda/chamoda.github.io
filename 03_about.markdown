@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
+
+<h2 class="post-list-heading">About</h2>
 
 #### Intro
 

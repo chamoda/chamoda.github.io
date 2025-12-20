@@ -1,0 +1,28 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ site.url }}/feed-read.xml" rel="self" type="application/atom+xml" />
+  <link href="{{ site.url }}/" rel="alternate" type="text/html" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/feed-read.xml</id>
+  <title type="html">{{ site.title | smartify | xml_escape }} - What I Read</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  {% assign read_items = site.read | where: "published", true | sort: "date" | reverse %}
+  {% for item in read_items limit: 20 %}
+  <entry>
+    <title type="html">{{ item.title | smartify | xml_escape }}</title>
+    <link href="{{ site.url }}{{ item.url }}" rel="alternate" type="text/html" title="{{ item.title | xml_escape }}" />
+    <published>{{ item.date | date_to_xmlschema }}</published>
+    <updated>{{ item.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ item.id }}</id>
+    <content type="html" xml:base="{{ site.url }}{{ item.url }}">{{ item.content | strip | xml_escape }}</content>
+    <author>
+      <name>{{ site.title | xml_escape }}</name>
+    </author>
+    <summary type="html">{{ item.excerpt | strip_html | truncatewords: 30 | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

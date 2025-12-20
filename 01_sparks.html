@@ -1,36 +1,26 @@
 ---
-layout: page
+layout: default
 title: Sparks
 permalink: /sparks/
 ---
 
 <style>
-.spark-item {
-  margin-bottom: 1.5rem;
-}
-.spark-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-}
-.spark-title a {
-  color: #111;
-  text-decoration: none;
-}
-.spark-title a:hover {
-  text-decoration: underline;
-}
-.spark-date {
-  color: #828282;
-  font-size: 0.9rem;
+.post-list > li {
+  margin-bottom: 1rem;
 }
 </style>
 
+<h2 class="post-list-heading">Sparks</h2>
+<ul class="post-list">
 {% assign sorted_sparks = site.sparks | sort: "date" | reverse %}
 {% for spark in sorted_sparks %}
-  <article class="spark-item">
-    <div class="spark-title">
-      <a href="{{ spark.url | relative_url }}">{{ spark.title }}</a>
-    </div>
-    <div class="spark-date">{{ spark.date | date: "%B %-d, %Y" }}</div>
-  </article>
+  <li>
+    <span class="post-meta">{{ spark.date | date: "%b %-d, %Y" }}</span>
+    <h3>
+      <a class="post-link" href="{{ spark.url | relative_url }}">{{ spark.title }}</a>
+    </h3>
+  </li>
 {% endfor %}
+</ul>
+
+<p class="rss-subscribe">subscribe <a href="/feed-sparks.xml">via RSS</a></p>

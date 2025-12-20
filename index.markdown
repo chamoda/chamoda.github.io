@@ -4,3 +4,9 @@
 
 layout: home
 ---
+
+<style>
+.post-list > li {
+  margin-bottom: 1rem;
+}
+</style>
