@@ -6,7 +6,7 @@ permalink: /about/
 
 #### Intro
 
-I'm a software architect and serial entrepreneur specializing in building technology-driven businesses that scale. With extensive experience in Python and Go across the full stack, I architect systems that drive measurable business value and sustainable growth. My passion lies in the startup ecosystem—from founding and scaling ventures to advising early-stage companies on technical strategy and product development. I focus on transforming innovative ideas into commercially viable solutions that create lasting market impact.
+I'm a software architect and serial entrepreneur building scalable businesses. I work across the full stack with Python, Go, TypeScript, and Rust, founding ventures and advising early-stage companies on technical strategy.
 
 #### I've founded, co-founded, and serve as CTO at several companies:
 
