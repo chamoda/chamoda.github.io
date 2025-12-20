@@ -14,7 +14,7 @@ permalink: /about/
 
 **In Brief**
 
-I'm a software architect and serial entrepreneur building scalable businesses. I architect systems with Python, Go, TypeScript, and Rust, founding ventures and advising early-stage companies on technical strategy.
+I'm a software architect and serial entrepreneur. I architect systems with Python, Go, TypeScript, and Rust, founding ventures and advising early-stage companies on technical strategy.
 
 I've founded, co-founded, and/or serve as CTO at several companies:
 
