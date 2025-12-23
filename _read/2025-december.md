@@ -11,3 +11,7 @@ published: true
 
 #### [The 21 Irrefutable Laws of Leadership by John C. Maxwell](https://www.goodreads.com/book/show/815716.The_21_Irrefutable_Laws_of_Leadership)
 
+#### [Fanatical Prospecting by Jeb Blount](https://www.goodreads.com/book/show/26270465-fanatical-prospecting)
+
+
+
