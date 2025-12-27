@@ -15,3 +15,5 @@ Reading is the highest-leverage habit you can build. It's one of the most effect
 **Read both fiction and non-fiction.** Fiction matters too. Different types of books exercise different mental muscles.
 
 **Add audiobooks to the mix.** They count. Use commutes, workouts, and chores as reading time.
+
+**You don't have to read from beginning to end.** Especially with non-fiction, feel free to jump around. Read the chapters that interest you most. Skip sections that don't serve your current needs. The best reading strategy is the one that keeps you reading.
