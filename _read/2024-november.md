@@ -1,15 +1,15 @@
 ---
 layout: post
-title: What I Read in November 2024
+title: What I read in November 2024
 year: 2024
 month: November
 date: 2024-12-04
 published: true
 ---
 
-### Books
+## Books
 
-#### [How to Take Smart Notes by Sönke Ahrens (goodreads.com)](https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes)
+## [How to Take Smart Notes by Sönke Ahrens (goodreads.com)](https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes)
 
 This was a fascinating read on Zettelkasten note-taking techniques. Here are a few key takeaways from the book:
 
@@ -20,7 +20,7 @@ This was a fascinating read on Zettelkasten note-taking techniques. Here are a f
 * Good, productive writing starts with good note-taking.
 * GTD (Getting things done) can't be transferred directly into insightful writing tasks.
 
-#### [Project Hail Mary by Andy Weir (goodreads.com)](https://www.goodreads.com/book/show/54493401-project-hail-mary)
+## [Project Hail Mary by Andy Weir (goodreads.com)](https://www.goodreads.com/book/show/54493401-project-hail-mary)
 
 I picked this one up because I really enjoyed the author's previous book, The Martian, but unfortunately, this one didn't meet my expectations.
 

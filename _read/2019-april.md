@@ -1,12 +1,12 @@
 ---
 layout: post
-title: What I Read in April 2019
+title: What I read in April 2019
 year: 2019
 month: April
 date: 2019-05-01
 published: true
 ---
 
-### Books
+## Books
 
-#### [Homo Deus: A Brief History of Tomorrow by Yuval Noah Harari (goodreads.com)](https://www.goodreads.com/book/show/28092870)
+## [Homo Deus: A Brief History of Tomorrow by Yuval Noah Harari (goodreads.com)](https://www.goodreads.com/book/show/28092870)

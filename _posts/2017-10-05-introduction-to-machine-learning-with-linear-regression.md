@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Machine Learning with Linear Regression"
+title: "Introduction to machine learning with linear regression"
 layout: post
 date: 2017-10-05
 description: "Learn the basics of machine learning with linear regression - covering supervised vs unsupervised learning, data visualization with Python, and implementing gradient descent from scratch."
@@ -12,7 +12,7 @@ Machine learning is all about computers learning from data to predict new data. 
 
 In supervised learning computer learns from input and output while creating a general model which can be used to predict output from new input. Unsupervised learning is about discovering patterns in data without knowing explicit labels beforehand. In this post I'm going to talk about linear regression which is a supervised learning method.
 
-# Jupyter Notebook
+## Jupyter Notebook
 
 Jupyter Notebook is an interactive python environment. You can install jupyter notebook with [Anaconda](https://www.anaconda.com/download) which will also install all necessary packages. After installation just run `jupyter notebook` in command line, which will open jupyter notebook instance in browser. Click `New` and create a Python 2 notebook. 
 
@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 
 [Matplotlib](https://matplotlib.org/) is a plotting library. We will use it to visualize our data.
 
-# Data
+## Data
 
 In this post I'm not going to use any real data set. Instead I'm going to generate some random data.
 
@@ -55,11 +55,11 @@ This is the plot generated from the code. Every blue dot is a data point. There 
 
 Data is distributed in a sort of linear nature because of the way we generate random data. 
 
-# Linear Regression
+## Linear regression
 
 So the purpose of linear regression is to find the equation of a line that does justice to all data points. We will define the equation of the line as $$h(x) = \theta_0 + \theta_1x$$. In machine learning $$h(x)$$ is called the hypothesis function. But this is just a fancy way of writing old school $$y = mx + c$$ where $$c = \theta_0$$ and $$m = \theta_1$$. Now our goal is to find $$\theta_0$$ and $$\theta_1$$. If we know the $$\theta_0$$ and $$\theta_1$$ we can draw the line. To find $$\theta_0$$ and $$\theta_1$$ we are going to use a function called cost function.
 
-# Cost Function
+## Cost function
 
 We are going to use the following equation which is called the least square method. 
 
@@ -87,7 +87,7 @@ def cost(x, theta0, theta1):
 
 Now we need to find `theta0` and `theta1` which minimize the cost function. One approach is to brute force a range of `theta0` and `theta1` and pick values where the return value of the cost function is minimal. But can we do better?
 
-# Gradient Descent
+## Gradient descent
 
 Gradient descent is an iterative algorithm to find out the minimum of a function. This is what we are going to do.
 
@@ -185,7 +185,7 @@ theta0: 2.567988282theta1:2.98323417806
 
 You can see that the algorithm learned to draw the most optimal line over the data distribution.
 
-# Prediction
+## Prediction
 
 Here comes the easy part. Now we have a model with learned parameters which can be used to predict. We can use our hypothesis function.
 
@@ -197,7 +197,7 @@ y = h(3, theta1, theta2)
 11.517690816184686
 ```
 
-# Scikit Learn
+## Scikit-learn
 
 Scikit Learn is a python library with one of the most used classical machine learning algorithms. Now you know what happens under the hood of the linear regression function. So you are ready to use a library to do production level linear regression machine learning. 
 

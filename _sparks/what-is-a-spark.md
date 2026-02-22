@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is a Spark
+title: What is a spark
 date: 2025-12-19
 ---
 

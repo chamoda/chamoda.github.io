@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2026 Predictions
+title: 2026 predictions
 date: 2025-12-20
 ---
 

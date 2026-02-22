@@ -1,12 +1,12 @@
 ---
 layout: post
-title: What I Read in September 2020
+title: What I read in September 2020
 year: 2020
 month: September
 date: 2020-10-01
 published: true
 ---
 
-### Books
+## Books
 
-#### [Bad Science by Ben Goldacre (goodreads.com)](https://www.goodreads.com/book/show/3272165)
+## [Bad Science by Ben Goldacre (goodreads.com)](https://www.goodreads.com/book/show/3272165)

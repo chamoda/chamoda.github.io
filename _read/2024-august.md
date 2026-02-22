@@ -1,21 +1,21 @@
 ---
 layout: post
-title: What I Read in August 2024
+title: What I read in August 2024
 year: 2024
 month: August
 date: 2024-09-09
 published: true
 ---
 
-### Books
+## Books
 
-#### [The Linux Command Line: A Complete Introduction by William Shotts (goodreads.com)](https://www.goodreads.com/book/show/11724436-the-linux-command-line)
+## [The Linux Command Line: A Complete Introduction by William Shotts (goodreads.com)](https://www.goodreads.com/book/show/11724436-the-linux-command-line)
 
 Skimmed through this one and would definitely recommend it to new developers looking to get familiar with Linux. The book’s comprehensive, practical approach makes it a great resource for learning the ropes.
 
-### Articles
+## Articles
 
-#### [Algorithms we develop software by (grantslatton.com)](https://grantslatton.com/software-pathfinding)
+## [Algorithms we develop software by (grantslatton.com)](https://grantslatton.com/software-pathfinding)
 
 Conceptually (at least) valuable set of methodologies when thinking of software development as pathfinding in a problem space. In summary:
 
@@ -27,7 +27,7 @@ Conceptually (at least) valuable set of methodologies when thinking of software 
   
   Let's say you have a task that takes 2 weeks to implement. Ask the question: what would you do if someone had a gun to your head to do this in 24 hours? Work on that approach first.
 
-#### [On writing well (zodvik.com)](https://zodvik.com/posts/on-writing-well)
+## [On writing well (zodvik.com)](https://zodvik.com/posts/on-writing-well)
 
 Checklist to bring absolute clarity to your writings.
 

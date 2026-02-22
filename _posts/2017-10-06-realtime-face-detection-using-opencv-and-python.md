@@ -7,7 +7,7 @@ description: "Learn how to implement real-time face detection using OpenCV and P
 
 Detection is an important application in computer vision. In this post I'm going to detail how to do real time face detection using the Viola Jones Algorithm introduced in the paper [Rapid object detection using a boosted cascade of simple features (2001)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.6807). Mind the word detection, we are not going to recognize, meaning which one the face belongs to. This is merely detection that there is a face in a given image. We are going to use [OpenCV](https://opencv.org) (Open Source Computer Vision Library). OpenCV is written in C++ but there are interfaces for other languages so we will use, preferably python.
 
-# Installation
+## Installation
 
 Instructions are for OSX. Steps are as follows
 
@@ -18,7 +18,7 @@ Instructions are for OSX. Steps are as follows
 * Check the installation with `echo -e "import cv2; print(cv2.__version__)" | python` command. It should output `3.3.0`
 * Make sure your system has `ffmpeg` installed which is required for reading a video stream from video formats like `mp4, mkv`. Using brew you can install ffmpeg with one command `brew install ffmpeg`
 
-# Time for action
+## Time for action
 
 Let's do a quick implementation.
 
@@ -78,7 +78,7 @@ Next we are writing to a window frame by frame. If you press the key `q` the loo
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/eAJwY8fQvXs" frameborder="0" allowfullscreen></iframe>
 
-# How it works
+## How it works
 
 The Viola Jones algorithm is a machine learning algorithm developed by Paul Viola and Michael Jones in 2001. It was designed to be very fast, even fast enough to be possible in embedded systems. We can break it down into 4 parts
 
@@ -87,7 +87,7 @@ The Viola Jones algorithm is a machine learning algorithm developed by Paul Viol
 * AdaBoost (Adaptive Boosting)
 * Cascading
 
-# Haar like features
+## Haar like features
 
 Haar-like features, named after the Hungarian mathematician Alfred Haar, are a way of identifying features in an image in a more abstract way. 
 
@@ -105,7 +105,7 @@ In the case of face detection the following feature will give a higher value in 
 
 Eye areas are generally darker than the area under the eye, so $$\text{(Black area - White area)}$$ will give a higher value. And that defines a single feature.
 
-# Integral Image
+## Integral image
 
 Integral image is a way to calculate rectangle features quickly
 
@@ -162,7 +162,7 @@ def sum_region(integral_img, top_left, bottom_right):
     return integral_img[bottom_right] + integral_img[top_left] - integral_img[top_right] - integral_img[bottom_left]    
 ```
 
-# AdaBoost (Adaptive Boosting)
+## AdaBoost (Adaptive Boosting)
 
 Now we need a way to select best features from all possible features that can correctly classify a face. AdaBoost algorithm was formulated by Yoav Freund and Robert Schapire in 1997 and won the prestigious [Gödel Prize](https://en.wikipedia.org/wiki/G%C3%B6del_Prize) in 2003. This elegant machine learning approach can be applied to wide range of problems not only image detection.
 
@@ -264,7 +264,7 @@ Notice how $$\alpha$$ is going to be a higher value if the error rate is small s
 
 So finally the algorithm needs to loop $$T$$ steps to find $$T$$ classifiers to get good results. 
 
-# Cascading
+## Cascading
 
 You may have noticed how many loops we have in the algorithm so this AdaBoost along with Haar Features is computationally expensive for real time detection. So we are using an attentional cascade to reduce some unnecessary computations. A more efficient cascade can be constructed so that negative sub-windows will be rejected early. Every stage of the cascade is a strong classifier, so all the features are grouped into several stages where each stage has several features. 
 
@@ -284,7 +284,7 @@ Finding optimum values for above parameters is a difficult task. Viola Jones int
 
 Now we are looping until the predefined $$F_{target}$$ is met by adding new stages. In stages we keep adding features until $$f_i$$ and $$d_i$$ are met. By doing this we are going to create a cascade of strong classifiers.
 
-# Additional Resources
+## Additional resources
 
 * Paper (Revised) [Viola Jones 2001](http://www.vision.caltech.edu/html-files/EE148-2005-Spring/pprs/viola04ijcv.pdf).
 * Viola Jones Python Implementation [GitHub](https://github.com/Simon-Hohberg/Viola-Jones)

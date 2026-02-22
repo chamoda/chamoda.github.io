@@ -1,15 +1,15 @@
 ---
 layout: post
-title: What I Read in October 2024
+title: What I read in October 2024
 year: 2024
 month: October
 date: 2024-10-31
 published: true
 ---
 
-### Books
+## Books
 
-#### [Refactoring UI by Adam Wathan (goodreads.com)](https://www.goodreads.com/book/show/43190966-refactoring-ui)
+## [Refactoring UI by Adam Wathan (goodreads.com)](https://www.goodreads.com/book/show/43190966-refactoring-ui)
 
 Key personal takeaways,
 
@@ -22,17 +22,17 @@ Key personal takeaways,
 * Baseline, don't center.
 * Ditch Hex for HSL.
 
-#### [An Essay on Economic Theory by Richard Cantillon (goodreads.com)](https://www.goodreads.com/book/show/9121382-an-essay-on-economic-theory)
+## [An Essay on Economic Theory by Richard Cantillon (goodreads.com)](https://www.goodreads.com/book/show/9121382-an-essay-on-economic-theory)
 
 Just read this as a foundational precursor to Adam Smith's The Wealth of Nations. This book is one of the earliest works to introduce the concept of the "entrepreneur".
 
-#### [Elon Musk by Walter Isaacson (goodreads.com)](https://www.goodreads.com/book/show/122765395-elon-musk)
+## [Elon Musk by Walter Isaacson (goodreads.com)](https://www.goodreads.com/book/show/122765395-elon-musk)
 
 I picked this up because I’ve enjoyed most of Walter Isaacson's previous biographies, but this one doesn’t quite measure up to his previous work. 
 
-### Articles
+## Articles
 
-#### [The Copenhagen Book (thecopenhagenbook.com)](https://thecopenhagenbook.com)
+## [The Copenhagen Book (thecopenhagenbook.com)](https://thecopenhagenbook.com)
 
 General guidelines on implementing auth in web apps. Here's what I got out from the book.
 
@@ -41,7 +41,7 @@ General guidelines on implementing auth in web apps. Here's what I got out from 
 * Use sudo mode sessions for high security situations. Basically assign a time limited token after doing extra authentication to do sensitive operations. GitHub asking to re-authenticate when doing a sensitive operation is a good example for this.
 * For password hashing Argon2id is the first choice, followed by Scrypt then Bcrypt.
 
-#### [Try to Fix It One Level Deeper (https://matklad.github.io)](https://matklad.github.io/2024/09/06/fix-one-level-deeper.html)
+## [Try to Fix It One Level Deeper (https://matklad.github.io)](https://matklad.github.io/2024/09/06/fix-one-level-deeper.html)
 
 When a bug is found in software, the fix often seems straightforward. However, by taking a moment to focus closely, you'll often uncover a deeper issue that, once resolved, can prevent similar bugs from occurring in the future. Always aim to fix problems one level deeper!
 

@@ -1,5 +1,5 @@
 ---
-title: "Public-key Cryptography Explained"
+title: "Public-key cryptography explained"
 layout: post
 date: 2017-12-13
 description: "Understand how public-key cryptography works with RSA encryption. Learn the mathematical concepts, see a toy implementation, and get practical OpenSSL commands for real-world use."
@@ -7,7 +7,7 @@ description: "Understand how public-key cryptography works with RSA encryption. 
 
 Public-key cryptography is one of the most used cryptosystems today. It refers to any system that uses a key pair, one for encrypting data and another one for decrypting data. If data is encrypted using a key, the other key is used to decrypt it. This seems pretty magical at first, but by the end of this blog post you will understand how this works. In this blog post I'll start with an analogy to understand what the purpose of using two key pairs is. Then I'll explain the mathematical concepts behind the algorithm. Then I'll implement a toy algorithm to understand it further (But never design your own crypto algorithms). Next I'll explain some `openssl` commands to generate RSA public and private keys which you can use in real world applications.
 
-# Let's start with an analogy
+## Let's start with an analogy
 
 Suppose you are at home and need to send your passbook to the bank. You have to send this by a bad courier service, in fact they always try to inspect and spy on what's inside every package. So you buy a locker box with two identical keys. You keep one to yourself and send the other one to the bank. You can't send the key with the package because the courier service will open the locker box and inspect. You can't send it separately because this bad courier always makes copies of the keys they deliver in hopes of trying them out on future deliveries. So you walk into the bank yourself to deliver the key to the bank. Now you go home and put the passbook inside the locker box and lock it with your identical key and send it via the bad courier. They deliver the box hopelessly without being able to see what's inside. It was inefficient, you had to visit the bank yourself first. But can we do better?
 
@@ -17,7 +17,7 @@ This time the bank buys a new kind of locker for this purpose. The new locker bo
 
 The first paragraph is an analogy of symmetric encryption. The second paragraph discusses asymmetric encryption, which is the category public encryption belongs to. But how could we design such a lock digitally? 
 
-# The Underlying Mathematics
+## The underlying mathematics
 
 We can write our encryption function as $$C = E(M)$$ where $$M$$ is the message we want to encrypt, $$E$$ is the function that does the encryption and $$C$$ is the encrypted message. Decryption is $$M = D(C)$$. Let's define our functions. 
 
@@ -141,7 +141,7 @@ Now choose a random private key $$d$$ such that $$ 1 < d < \phi(n) $$ and $$gcd(
 
 Now that we have found keys $$e$$ and $$d$$ we can use them to encrypt and decrypt messages. In the next section I will give a numeric example which will clear up most of the details.
 
-# Numerical Example 
+## Numerical example
 
 Let's choose two prime numbers $$p$$ and $$q$$. We choose small values to make calculations easier but in practice the RSA algorithm uses very large prime numbers. 
 
@@ -272,11 +272,11 @@ Following should output `99` if our algorithm works and it does :)
 rsa.decrypt(rsa.encrypt(99, rsa.public_key()), rsa.private_key())
 ```
 
-# How is it secure
+## How is it secure
 
 The whole security of public key encryption depends on the fact that given a public key no one should be able to generate the private key from that public key. Remember $$ed \equiv 1 \pmod{\phi(n)}$$? So, to calculate d from e an attacker needs to know $$\phi(n)$$. But the only way to calculate that is $$(p - 1)(q - 1)$$. Only the key generator knows $$p$$ and $$q$$. When $$p$$ and $$q$$ are large enough no one can calculate (yet!) $$p$$ and $$q$$ from $$n$$. The whole cryptosystem depends on this assumption.
 
-# Practical Usage
+## Practical usage
 
 Public key cryptography is used everywhere. HTTPS runs on public key cryptography (not only RSA but it plays a huge role). If you need to use public key cryptography for your own application you can use openssl. openssl is a full featured toolkit which can generate RSA keys among lots of other things. To generate a key pair type the following in the command line (assuming you are on a UNIX based system)	
 
@@ -310,7 +310,7 @@ openssl rsautl -decrypt -inkey private_key.pem -in key.bin.enc -out key.bin
 
 If you open the `key.bin` file you can see that the same data is there. 
 
-# Additional Resources
+## Additional resources
 
 * Toy RSA Algorithm - [GitHub](https://github.com/chamoda/rsa-algorithm)
 * Original RSA Paper - [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems](https://people.csail.mit.edu/rivest/Rsapaper.pdf)

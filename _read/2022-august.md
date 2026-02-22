@@ -1,14 +1,14 @@
 ---
 layout: post
-title: What I Read in August 2022
+title: What I read in August 2022
 year: 2022
 month: August
 date: 2022-09-01
 published: true
 ---
 
-### Books
+## Books
 
-#### [Food Rules: An Eater's Manual by Michael Pollan (goodreads.com)](https://www.goodreads.com/book/show/7015635)
+## [Food Rules: An Eater's Manual by Michael Pollan (goodreads.com)](https://www.goodreads.com/book/show/7015635)
 
-#### [The Stranger by Albert Camus (goodreads.com)](https://www.goodreads.com/book/show/49552)
+## [The Stranger by Albert Camus (goodreads.com)](https://www.goodreads.com/book/show/49552)
