@@ -13,7 +13,7 @@ If software becomes nearly free to build and AI models become commoditized, wher
 
 ## Software is no longer a moat
 
-No one can build Chrome in a weekend yet, but the amount of human-years it took to write that code are compressing by 3x or more. AI companies know this, so they're scrambling to build secondary moats: vertically integrated software platforms on top of their models, and user feedback loops that generate proprietary training data.
+No one can build Chrome in a weekend yet, but the amount of human-years it took to write that code are compressing by Nx or more. AI companies know this, so they're scrambling to build secondary moats: vertically integrated software platforms on top of their models, and user feedback loops that generate proprietary training data.
 
 Software will probably never be truly "free", there will always be human product management, design decisions, and coordination involved. But the cost curve is dropping fast enough that software alone can no longer protect a business. The companies that thought they were selling software were often really selling something else. AI makes that distinction impossible to ignore.
 
