@@ -35,16 +35,6 @@ So when you start a career as a loser, you really have three paths. The rational
 
 The dynamic emerges naturally as soon as a company scales. Sociopaths know that the only way to make an organization capable of survival is to buffer the intense chemistry between the producer losers and the leader sociopaths with enough clueless padding in the middle. Without it, the company would explode like a nuclear bomb instead of generating power like a steady reactor.
 
-## The startup version of the same story
-
-The whole arc compresses neatly onto a startup's life.
-
-**Phase 1, the scrappy beginning.** A sociopath with an idea recruits just enough losers to kick off the cycle. The founder takes on the risk and holds the share of the equity. The early engineers, designers, and marketers are "losers" in the technical sense, because they are making a fundamentally bad economic bargain: they trade the prime years of their lives for below-market wages and a microscopic fraction of a percent in equity. They do all the actual producing; the founder holds the keys to the real wealth.
-
-**Phase 2, the scale-up.** As the company goes from 15 to 150 people, the founder can no longer manage the losers directly, so the clueless arrive. These are the process-driven managers and enthusiastic VPs who actually believe the marketing copy. They implement OKRs, performance reviews, and mandatory culture events, and in doing so they unknowingly shield the founder from the resentment of the overworked losers. This is the exact phase where early employees start complaining that the startup has "lost its soul" and "become too corporate."
-
-**Phase 3, maturity and the exit.** Growth slows and the innovation engine stalls. Because the sociopaths never bought into their own propaganda, they are emotionally detached enough to orchestrate an exit and walk away with the payday. The losers realize their tiny equity grants won't make them rich and quietly drop to doing the bare minimum. The clueless, unaware the game is even over, are left to enthusiastically manage the zombified machine.
-
 ## How the layers talk
 
 The layers don't speak the same language, and that gap is not an accident. It is the thing that keeps the structure stable. If everyone spoke plainly to everyone else, the clueless would notice the bargain they are in, the losers would organize, and the sociopaths would lose their leverage. So each pair of layers communicates in a different register, and most of those registers are designed to not actually transfer information. Notably, sociopaths and losers rarely speak to each other at all; the clueless in the middle exist precisely so that those two never have to.
