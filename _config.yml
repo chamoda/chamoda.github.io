@@ -40,9 +40,6 @@ collections:
   read:
     output: true
     permalink: /:collection/:name
-  sparks:
-    output: true
-    permalink: /:collection/:name
 
 
 # Google Analytics
