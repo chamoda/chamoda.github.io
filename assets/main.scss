@@ -83,9 +83,32 @@ blockquote {
   border-left: 3px solid $rule;
 }
 
+// ----------------------------------------------------------------------------
+// Code — warm background + muted, warm syntax palette
+// ----------------------------------------------------------------------------
+
+$code-bg: #f4f1ea;
+
 code, pre {
   font-size: 14px;
   font-family: $mono;
+  background-color: $code-bg;
+  border: 1px solid $rule;
+  border-radius: 4px;
+  color: $ink;
+}
+
+.highlight { background: $code-bg; }
+.highlighter-rouge .highlight { background: $code-bg; }
+
+.highlight {
+  .c, .cm, .c1, .cs, .cp, .cd { color: #9c958a; font-style: italic; } // comments
+  .k, .kd, .kr, .kc, .kp, .kn, .kt, .o, .ow { color: $ink; }          // keywords / operators
+  .nc, .nf, .nd { color: $accent; }                                   // class / function / decorator
+  .nb, .bp, .nn, .na, .nv, .vc, .vg, .vi { color: #7a6f60; }          // builtins / names
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: #5f6b42; } // strings
+  .m, .mi, .mf, .mh, .mo, .il { color: #9a6a2f; }                     // numbers
+  .err { color: $accent; background: none; }                          // errors — no harsh bg
 }
 
 // ----------------------------------------------------------------------------
@@ -205,6 +228,19 @@ a {
 .post-content {
   h2 { font-size: $fs-h2; margin-top: 1.8em; }
   h3 { font-size: $fs-h3; margin-top: 1.5em; }
+}
+
+// Figures / diagrams
+.diagram {
+  margin: 2.4em auto;
+  text-align: center;
+
+  svg { width: 100%; max-width: 460px; height: auto; }
+
+  figcaption {
+    @include section-label;
+    margin-top: 1em;
+  }
 }
 
 // ----------------------------------------------------------------------------

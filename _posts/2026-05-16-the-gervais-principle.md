@@ -13,7 +13,19 @@ The Gervais Principle breaks an organization into three groups: sociopaths, the 
 
 ## The three layers
 
-![Macleod pyramid]({{ site.url }}/assets/posts/the-gervais-principle/macleod-pyramid.png)
+<figure class="diagram">
+  <svg viewBox="0 0 520 330" role="img" aria-label="The MacLeod hierarchy: a pyramid with sociopaths at the top, the clueless in the middle, and losers at the base." xmlns="http://www.w3.org/2000/svg">
+    <polygon points="101,210 419,210 500,304 20,304" fill="#efebe2" stroke="#fdfcfa" stroke-width="2"/>
+    <polygon points="168,132 352,132 419,210 101,210" fill="#8a8278" stroke="#fdfcfa" stroke-width="2"/>
+    <polygon points="260,22 352,132 168,132" fill="#1a1815" stroke="#fdfcfa" stroke-width="2"/>
+    <g font-family="'Source Serif 4', Georgia, serif" text-anchor="middle">
+      <text x="260" y="104" font-size="19" fill="#fdfcfa">Sociopaths</text>
+      <text x="260" y="178" font-size="20" fill="#fdfcfa">Clueless</text>
+      <text x="260" y="268" font-size="22" fill="#1a1815">Losers</text>
+    </g>
+  </svg>
+  <figcaption>The MacLeod hierarchy</figcaption>
+</figure>
 
 **Losers** aren’t necessarily bad, unhappy, or low-status. For various reasons, they have given up some potential for long-term economic liberty in exchange for short-term economic stability. They traded freedom for a paycheck. They are too smart to fool themselves about this, so instead they enter into social contracts that require them to fool each other. Losers are happiness seekers rather than will-to-power players. They have no more loyalty to the firm than sociopaths do, but they are loyal to individual people, and they look for fulfillment through work when they can find it and coast when they can't. Stanley Hudson from The Office is an example. Openly counting down to retirement, doing crosswords during meetings, and refusing to spend a single calorie beyond what the bargain requires.
 
