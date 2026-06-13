@@ -8,22 +8,6 @@ permalink: /read/archive/
   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
 </svg>Reading Archive</h2>
 
-<style>
-.year-title {
-  font-size: 1.2rem !important;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-}
-.month-list {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-.month-list a {
-  font-size: 1.2rem;
-}
-</style>
-
 {% assign posts_by_year = site.read | where: "published", true | group_by: "year" | sort: "name" | reverse %}
 {% for year_group in posts_by_year %}
   <h3 class="year-title">{{ year_group.name }}</h3>
