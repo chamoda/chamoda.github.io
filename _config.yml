@@ -41,6 +41,16 @@ collections:
     output: true
     permalink: /:collection/:name
 
+# Social sharing card (Open Graph / Twitter)
+twitter:
+  card: summary_large_image
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-image.png
+
 
 # Google Analytics
 google_analytics: UA-74150817-1
