@@ -228,6 +228,19 @@ a {
 .post-content {
   h2 { font-size: $fs-h2; margin-top: 1.8em; }
   h3 { font-size: $fs-h3; margin-top: 1.5em; }
+
+  // Inline links in running prose need to be visible without hovering.
+  p a, li a, blockquote a {
+    text-decoration: underline;
+    text-decoration-color: $sep;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+
+    &:hover {
+      color: $accent;
+      text-decoration-color: $accent;
+    }
+  }
 }
 
 // Figures / diagrams

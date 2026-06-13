@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Time to switch to monorepos
+title: Rethinking monorepos in the age of agents
 date: 2026-06-13
 description: "As the industry switches to agentic coding, it makes less and less sense to keep separate repositories when agents benefit from the broader context of a monorepo."
 ---
@@ -22,5 +22,9 @@ More and more automations can be done with agents, and some things related to ma
 ## Compliance as code
 
 Treat compliance as code and let that part live in your monorepo. Keep enforcement properly defined, and you also get an audit trail with git.
+
+## Almost anything as code
+
+Branding, marketing, and compliance are just examples. The pattern generalizes: most things a company does can become X as code. Sales playbooks, support runbooks, hiring rubrics, financial reporting, even strategy can be expressed as text, configuration, and scripts that live next to everything else. Once something is in the repo, an agent can read it, reason about it with the surrounding context, and act on it. The repository stops being just where the product lives and starts becoming where the company itself is defined, version-controlled, and driven forward.
 
 I built [agent-foundry](https://github.com/chamoda/agent-foundry) recently, a set of GitHub Actions that can run agents in GitHub Actions continuously. Now that I'm running them on a bunch of personal and work repositories, it's giving me more and more ideas. I'm sure all of these ideas already exist, but I think it's the perfect time to combine them with agents and monorepos.
