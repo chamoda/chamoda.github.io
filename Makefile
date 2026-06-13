@@ -2,7 +2,7 @@
 
 # Run the Jekyll dev server with live reload
 run:
-	bundle exec jekyll serve --livereload --incremental --watch
+	bundle exec jekyll serve --livereload --watch
 
 # Build the site
 build:
